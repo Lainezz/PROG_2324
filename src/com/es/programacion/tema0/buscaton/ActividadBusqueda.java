@@ -2,7 +2,7 @@ package com.es.programacion.tema0.buscaton;
 
 import java.util.Random;
 
-public class Tema4Actividad1 {
+public class ActividadBusqueda {
 	static long iteraciones = 0;
 	static long total = 0;
 	static int encontrados = 0;
@@ -11,7 +11,7 @@ public class Tema4Actividad1 {
 	public static void main(String[] args) {
 
 
-		Tema4Actividad1 act = new Tema4Actividad1();
+		ActividadBusqueda act = new ActividadBusqueda();
 		int[] arrO1 = act.inicializarArrayOrdenado(10000);
 		int[] arrO2 = act.inicializarArrayOrdenado(10000);
 		int[] arrO3 = act.inicializarArrayOrdenado(10000);
@@ -135,9 +135,9 @@ public class Tema4Actividad1 {
 		act.mostrarResultados();
 		
 		//Parte para persistir los datos en un archivo excel
-//		EscribirExcel e = new EscribirExcel();
-//		String[] datos = {nombre, total+"", iteraciones+"", encontrados+""};
-//		e.persistirDatosExcel(datos);
+		EscribirExcel e = new EscribirExcel();
+		String[] datos = {nombre, total+"", iteraciones+"", encontrados+""};
+		e.persistirDatosExcel(datos);
 	}
 
 

@@ -17,7 +17,7 @@ public class EscribirExcel {
 	public void persistirDatosExcel(String[] datos) {
 
 		String fileName = "stats.xlsx";
-		String filePath = "./ficheros/buscaton/" + fileName;
+		String filePath = "C:\\Users\\diego\\Desktop\\Workspaces\\workspace_2324\\src\\main\\resources\\buscaton\\" + fileName;
 
 		// Creando objeto libro de Excel
 

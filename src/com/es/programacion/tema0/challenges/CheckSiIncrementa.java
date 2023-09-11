@@ -1,4 +1,4 @@
-package com.es.programacion.challenges;
+package com.es.programacion.tema0.challenges;
 
 public class CheckSiIncrementa {
 
