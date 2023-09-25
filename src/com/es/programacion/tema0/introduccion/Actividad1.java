@@ -8,6 +8,7 @@ public class Actividad1 {
 		Actividad1 act = new Actividad1();
 		Scanner scan = new Scanner(System.in);
 		int ejer = 1;
+		double lng = 2.14;
 		int num1 = 0, num2 = 0, num3 = 0;
 		while (ejer != 0) {
 
