@@ -30,9 +30,21 @@ public class EjerVeoVeo {
          */
         Scanner scan = new Scanner(System.in);
         char letraAAdivinar = 'O'; // Lo que vosotros veáis
-        char letra = scan.next().charAt(0);
+        System.out.println("Veo veo...");
+        System.out.println("¿Qué ves?");
+        System.out.println("Una cosita que empieza por...");
+        char letra;
+        do {
 
+            letra = scan.next().charAt(0);
 
+            if (letra != letraAAdivinar){
+                System.out.println("Noooo... una cosita que empieza por...");
+            }
+
+        } while(letraAAdivinar != letra);
+
+        System.out.println("Adivinaste, un Ordenador");
     }
 
 
