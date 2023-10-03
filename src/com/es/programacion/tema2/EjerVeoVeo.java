@@ -42,11 +42,8 @@ public class EjerVeoVeo {
                 System.out.println("Noooo... una cosita que empieza por...");
             }
 
-        } while(letraAAdivinar != letra);
+        } while(letra != letraAAdivinar);
 
         System.out.println("Adivinaste, un Ordenador");
     }
-
-
-
 }
