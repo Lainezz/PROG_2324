@@ -33,18 +33,15 @@ public class LoginContrasenia {
             System.out.print("Introduzca la password: ");
             intentoPassw = scan.next();
 
-            if(!usuarioSis.equals(intentoUser) || !contraseniaSis.equals(intentoPassw)){
+            if(!usuarioSis.equals(intentoUser) || !contraseniaSis.equals(intentoPassw)) {
                 System.out.println("Credenciales incorrectas!! Intentalo de nuevo");
             }
 
         } while(!usuarioSis.equals(intentoUser) || !contraseniaSis.equals(intentoPassw));
 
 
-
-
         // Cuando sale del while, significa que se han introducido las credenciales correctas
         System.out.print("Bienvenid@ "+intentoUser);
-
 
     }
 }
