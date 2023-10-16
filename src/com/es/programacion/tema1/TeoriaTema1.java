@@ -74,11 +74,6 @@ public class TeoriaTema1 {
         String nombre2 = scan.next();
         String nombre3 = scan.nextLine();
 
-
-
-
-
-
     }
 }
 

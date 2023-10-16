@@ -2,7 +2,7 @@ package com.es.programacion.tema1;
 
 import java.util.Scanner;
 
-public class ResolucionEjercicios {
+public class EjercicioHora {
 
     public static void main(String[] args) {
         /*
