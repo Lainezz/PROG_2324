@@ -101,8 +101,9 @@ public class TeoriaArrays {
          */
         char[] efes = new char[1000]; // array de char de tamanio 1000
 
-        for(int i = 0; i<= efes.length - 1; i++){
-            efes[i] = 'F';
+        for(int i = 0; i<= efes.length - 1; i++) {
+            efes[i] = 'F'; // Llenamos cada posicion con una f
+            System.out.println(efes[i]);
         }
 
 
