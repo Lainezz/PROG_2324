@@ -86,7 +86,8 @@ public class TeoriaArrays {
 
         // Para recorrer el array, conocemos su longitud con intArr.length
         // Entonces, iríamos desde 0... hasta length - 1 (que es el último índice del array)
-        // {4, 7, 2, 15, 12, 10}
+        //      i0      i1      i2      i3     i4     i5
+        //      {4,     7,      2,      15,    12,    10}
         for(int i = 0; i <= intArr.length - 1; i++) {
 
             System.out.println("El elemento "+intArr[i]);
@@ -96,8 +97,13 @@ public class TeoriaArrays {
 
         /**
          * Declarar un array de char de tamaño 1000.
-         * Llenar TODAS las posiciones con la letra "F"
+         * Llenar TODAS los elementos con la letra "F"
          */
+        char[] efes = new char[1000]; // array de char de tamanio 1000
+
+        for(int i = 0; i<= efes.length - 1; i++){
+            efes[i] = 'F';
+        }
 
 
     }
