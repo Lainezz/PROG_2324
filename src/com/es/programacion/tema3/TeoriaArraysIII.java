@@ -1,6 +1,6 @@
 package com.es.programacion.tema3;
 
-public class TeoriaI {
+public class TeoriaArraysIII {
 
     public static void main(String[] args) {
 
