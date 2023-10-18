@@ -22,13 +22,7 @@ public class CheckPalindromo {
 	 */
 	static boolean checkPalindromo(String cadena) {
 		
-		int longitud = cadena.length();
-		//System.out.println(longitud/2);
-		String mitad1 = cadena.substring(0, longitud/2);
-		System.out.println(mitad1);
-		
-		String mitad2 = cadena.substring((int)Math.ceil(cadena.length()/2.0), longitud);
-		System.out.println(mitad2);
+
 		
 		
 		return false;
