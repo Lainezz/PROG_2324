@@ -79,6 +79,16 @@ public class TeoriaArraysIII {
         // Con los String, para acceder a una posición concreta, se hace de manera parecida
         // nombreString.charAt(index/posición);
 
+        String abece = "abcdefghijklmnñopqrstuvwxyz";
+
+
+        // Vamos a hacer un ejercicio donde recorramos el String abece y mostremos cada uno de los carácteres
+        for (int i=0; i<= abece.length()-1; i++ ) {
+            System.out.print("["+abece.charAt(i)+"] ");
+        }
+
+
+
 
 
     }

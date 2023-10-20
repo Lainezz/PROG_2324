@@ -45,6 +45,38 @@ public class ActividadTeoriaArraysIII {
         System.out.println("La nota media es: "+notaMedia);
 
 
+        /**
+         * Codifica tú mismo los siguientes programas
+         */
+        /**
+         * Actividad 4.
+         * Dado un String. Recorrer el String y mostrar cada uno de los carácteres de la siguiente forma:
+         * {caracter0, caracter1, caracter2, ...}
+         *
+         * Ejemplo:
+         * String cadena = "pikachu";
+         *
+         * El programa mostraría:
+         * {p, i, k, a, c, h, u}
+         *
+         */
+
+
+        /**
+         * Actividad 5.
+         * Hacer lo mismo que antes pero recorriendo la cadena al revés, es decir,
+         * con el mismo formato que en el indicado en el ejercicio anterior, mostrar la cadena
+         * al revés.
+         *
+         * Ejemplo:
+         * String cadena = "pikachu";
+         *
+         * El programa mostraría:
+         * {u, h, c, a, k, i, p}
+         *
+         */
+
+
 
 
 
