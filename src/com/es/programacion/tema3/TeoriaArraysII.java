@@ -97,11 +97,21 @@ public class TeoriaArraysII {
          * "La posición 8 tiene..."
          * ...
          */
+        String[] arrSt = new String[10];
+        arrSt[0] = "Bulbasaur";
+        arrSt[1] = "Ivysaur";
+        arrSt[2] = "Venusaur";
+        arrSt[3] = "Charmander";
+        arrSt[4] = "Charmeleon";
+        arrSt[5] = "Charizard";
+        arrSt[6] = "Squirtle";
+        arrSt[7] = "Wartortle";
+        arrSt[8] = "Blastoise";
+        arrSt[9] = "Pikachu";
 
-
-
-
-
+        for (int i = arrSt.length - 1; i>= 0 ; i--) {
+            System.out.println(arrSt[i]+" te elijo a tí");
+        }
 
     }
 

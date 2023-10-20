@@ -4,85 +4,84 @@ public class TeoriaArraysIII {
 
     public static void main(String[] args) {
 
+        /**
+         * Recordatorio de métodos conocidos hasta ahora.
+         */
+
+        // Dado el array de enteros iArr ¿Cómo podemos conocer su tamaño/longitud?
+        int[] iArr = {2,6,2,99,100,34,10,320,45,26,96,22,11,33,44};
+        System.out.println("La longitud de iArr es: ");
+
+        // ¿Cómo podemos acceder a una posición/index concreta de un array?
+        int[] iArr2 = {2,6,2,99,100,34,10,320,45,26,96,22,11,33,44,6,12,54,34,87,101,66,3,12,1,2,3,4,9,5,87};
+        System.out.println("El elemento en la posición 0 es ");
+        System.out.println("El elemento en la posición 4 es ");
+        System.out.println("(Difícil) El elemento en la última posición es ");
 
 
-        // Declaración e inicialización de un array unidimensional de enteros
-        int[] numeros = {10, 20, 30, 40, 50};
-        // Declaración e inicialización de un array unidimensional de números reales
-        double[] reales = {1.02, 2, 3.33, 0.14, 5};
-        // Declaración e inicialización de un array unidimensional de caracteres
-        char[] carac = {'a','b','c','%','4'};
+        // Dados dos String normales y corrientes. ¿Cómo podemos saber si esas dos cadenas son iguales?
+        String cadena1 = "supercalifragilistoespiaIdoso";
+        String cadena2 = "supercalifragilistoespialdoso";
 
-        // Declaramos una matriz 3x3
-        int[][] matriz = {new int[3], new int[5], new int[10]};
+        if(cadena1.equals(cadena2)){
+            System.out.println("Ambas cadenas son iguales");
+        } else {
+            System.out.println("Las cadenas son diferentes");
+        }
 
+        String cadena3 = "supercalifragilistoespialidoso";
+        String cadena4 = "SupErCAlifrAgilistOEspialidOsO";
 
+        if(cadena3.equalsIgnoreCase(cadena4)) {
+            System.out.println("Ambas cadenas son iguales");
+        } else {
+            System.out.println("Las cadenas son diferentes");
+        }
 
-        String[][] matrizDeCadenas = new String[2][2];
-        matrizDeCadenas[0][0] = "pepito";
-        matrizDeCadenas[0][1] = "menganito";
-        matrizDeCadenas[1][0] = "fulanito";
-        matrizDeCadenas[1][1] = "zanganito";
-
-
-        char[][] matrizDeChar = {
-                {'a','b','c','d'},
-                {'%','f','/','*'},
-                {'i','?',',','!'},
-                {'1',')','n','o'}
-        };
 
         /**
-         * Si sabemos que cada posición corresponde a un módulo, podemos saber cuántos alumnos hay por módulo.
-         * 0 -> Sistemas informáticos
-         * 1 -> Programación
-         * 2 -> Entornos de desarrollo
-         * 3 -> Bases de datos
-         * 4 -> Lenguajes de marcas
+         * Hoy vamos a ver algunas características de los String
          */
-        int[] numAlumn = {21, 17, 15, 21, 12};
+
+        // Declarar un array de char de tamaño 10.
+
+        // Un String no es otra cosa que un array de char
+
+        // Tenemos métodos de String, que son iguales a los que tenemos en array
+        String pruebaSt = "Hola Mundo";
+
+        char[] arrCh = {'H','o','l','a',' ','M','u','n','d','o'};
+        int[] arrInt = new int[11];
+        boolean[] arrBool = {true, false, true, true, true};
 
 
-        char[][] tablero = new char[8][8];
+        System.out.println("La longitud de arrCh es: "+arrCh.length);
+        System.out.println("La longitud de arrInt es: "+arrInt.length);
+        System.out.println("La longitud de arrBool es: "+arrBool.length);
+        System.out.println("La longitud de pruebaSt es: "+pruebaSt.length());
 
-        // PIEZAS BLANCAS
-        tablero[0][0] = 'T';
-        tablero[0][1] = 'C';
-        tablero[0][2] = 'A';
-        tablero[0][3] = 'Q';
-        tablero[0][4] = 'K';
-        tablero[0][5] = 'A';
-        tablero[0][6] = 'C';
-        tablero[0][7] = 'T';
+        // longitud de un array -> .length
+        // longitud de un String -> .length()
 
-        tablero[1][0] = 'P';
-        tablero[1][1] = 'P';
-        tablero[1][2] = 'P';
-        tablero[1][3] = 'P';
-        tablero[1][4] = 'P';
-        tablero[1][5] = 'P';
-        tablero[1][6] = 'P';
-        tablero[1][7] = 'P';
 
-        // PIEZAS NEGRAS
-        tablero[6][0] = 'P';
-        tablero[6][1] = 'P';
-        tablero[6][2] = 'P';
-        tablero[6][3] = 'P';
-        tablero[6][4] = 'P';
-        tablero[6][5] = 'P';
-        tablero[6][6] = 'P';
-        tablero[6][7] = 'P';
+        // ¿Alguien puede decirme cómo se vería en forma de array la cadena "perro"?
+        /*
+                     0  1  2  3  4
+        "perro" ->  [p][e][r][r][o]
 
-        tablero[7][0] = 'T';
-        tablero[7][1] = 'C';
-        tablero[7][2] = 'A';
-        tablero[7][3] = 'Q';
-        tablero[7][4] = 'K';
-        tablero[7][5] = 'A';
-        tablero[7][6] = 'C';
-        tablero[7][7] = 'T';
+         */
+
+        // ¿Cuál es el carácter que está situado en el index/posición número 3?
+
+        // En un array normal, para acceder a una posición concreta, teníamos que hacerlo de la siguiente forma:
+        // nombreArray[index/posición];
+
+        // Con los String, para acceder a una posición concreta, se hace de manera parecida
+        // nombreString.charAt(index/posición);
+
+
 
     }
 
 }
+
