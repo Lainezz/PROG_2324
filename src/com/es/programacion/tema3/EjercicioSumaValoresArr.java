@@ -2,7 +2,7 @@ package com.es.programacion.tema3;
 
 import java.util.Scanner;
 
-public class EjerciciosTema3 {
+public class EjercicioSumaValoresArr {
 
     public static void main(String[] args) {
 

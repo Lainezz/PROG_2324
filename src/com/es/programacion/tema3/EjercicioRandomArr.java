@@ -22,7 +22,7 @@ public class EjercicioRandomArr {
 
         // Ahora quiero mostrar todos los elementos del array
         for (int i=0; i<=arrDoub.length-1; i++){
-            System.out.print(arrDoub[i]+", ");
+            System.out.println(arrDoub[i]+", ");
         }
 
         // Leer por teclado un num real
