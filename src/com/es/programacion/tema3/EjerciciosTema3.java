@@ -10,8 +10,7 @@ public class EjerciciosTema3 {
          * Act 1. Pedir 10 valores reales, almacenarlos en un array,
          * y mostrar la suma de todos los valores
          */
-
-        double numReal = 0.0;
+        double sumatoria = 0.0;
         double[] arrDeDoubles = new double[10];
 
         Scanner scan = new Scanner(System.in);
@@ -24,13 +23,14 @@ public class EjerciciosTema3 {
             arrDeDoubles[i] = scan.nextDouble();
         }
 
-        // Luego un for para mostrar por pantalla el contenido del array
-        System.out.print("[");
+        // Luego un for para sumar todos los elementos del array
         for (int i=0; i<= arrDeDoubles.length-1; i++) {
 
-            System.out.print(arrDeDoubles[i]+", ");
+            sumatoria = sumatoria + arrDeDoubles[i];
         }
-        System.out.print("]");
+
+        System.out.println("La suma de todos los elementos es: "+sumatoria);
+
 
 
     }
