@@ -18,6 +18,7 @@ public class ActividadTeoriaArraysIII {
         for (int i=0; i<arrDeSt.length-1; i++) {
             System.out.println(i);
         }
+        // Error en el menor estricto -> poner <=
 
 
         System.out.println("*******Actividad 2*************");
@@ -31,6 +32,8 @@ public class ActividadTeoriaArraysIII {
             System.out.println(i);
         }
 
+        // Error en int = 1 -> Poner int i = 0
+
         System.out.println("*******Actividad 3*************");
         /**
          * Actividad 3.
@@ -38,11 +41,15 @@ public class ActividadTeoriaArraysIII {
          */
         int[] notas = {5, 7, 5, 6, 5, 8, 5, 5, 8, 6, 7, 8, 4, 8, 2, 9, 4, 5};
         int sumatoria = 0;
-        for (int i=1; i<notas.length-1; i++) {
+        for (int i=1; i < notas.length-1; i++) {
             sumatoria = notas[i];
         }
         double notaMedia = sumatoria / notas.length;
-        System.out.println("La nota media es: "+notaMedia);
+        System.out.println("La nota media es: " + notaMedia);
+
+        // Error en int i = 1 -> Poner int i = 0
+        // Error en menor estricto -> Poner <=
+        // Error al hacer la sumatoria sumatoria = notas[i]; -> Poner sumatoria = sumatoria + notas[i]; ó sumatoria += notas[i];
 
 
         /**
@@ -60,6 +67,14 @@ public class ActividadTeoriaArraysIII {
          * {p, i, k, a, c, h, u}
          *
          */
+        // Solución planteada:
+        String cadena = "pikachu";
+        System.out.print("{");
+        for (int i = 0; i<= cadena.length()-1;i++) {
+            System.out.print(cadena.charAt(i)+", ");
+        }
+        System.out.println("}\n");
+
 
 
         /**
@@ -75,6 +90,14 @@ public class ActividadTeoriaArraysIII {
          * {u, h, c, a, k, i, p}
          *
          */
+
+        // Solución planteada:
+        String cadena2 = "pikachu";
+        System.out.print("{");
+        for (int i = cadena2.length()-1; i >= 0;i--) {
+            System.out.print(cadena2.charAt(i)+", ");
+        }
+        System.out.print("}\n");
 
 
 

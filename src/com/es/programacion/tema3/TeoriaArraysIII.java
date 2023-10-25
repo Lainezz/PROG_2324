@@ -1,5 +1,7 @@
 package com.es.programacion.tema3;
 
+import java.util.Arrays;
+
 public class TeoriaArraysIII {
 
     public static void main(String[] args) {
@@ -103,11 +105,6 @@ public class TeoriaArraysIII {
             System.out.println(abece.charAt(i));
 
         }
-
-
-
-
-
     }
 
 }
