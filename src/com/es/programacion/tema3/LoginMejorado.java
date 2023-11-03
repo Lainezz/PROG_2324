@@ -199,7 +199,19 @@ public class LoginMejorado {
             }
 
         } while(opc != 0);
-
-
     }
 }
+
+/*
+¿Crees que existe alguna limitación en este programa?
+¿Cuántos usuarios como máximo podrá tener el sistema?
+
+Que como máximo sólo pueden haber 10 usuarios a la vez en el sistema, lo cual supone una gran limitación.
+Esta limitacion viene dada de la misma naturaleza de los arrays, ya que tienen una longitud fija dada
+en el momento de su creación.
+
+Otra limitacion puede ser que, ya que los dos arrays (el de usuarios y passwords) son completamente independientes
+el uno del otro, el mantenimiento de los índices de los mismos puede ser tedioso y es bastante
+propenso a fallos si el programa siguiera creciendo. Se necesitaría un único array que contuviera
+tanto el usuario como la contrasenia.
+ */
