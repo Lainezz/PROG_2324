@@ -1,5 +1,8 @@
 package com.es.programacion.tema3;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class GetterSetter {
 
     public static void main(String[] args) {
@@ -24,6 +27,45 @@ public class GetterSetter {
          * La función se llama comprobar
          *
          */
+
+        // Variables generales del programa
+        Scanner scan = new Scanner(System.in);
+        int num = 0;
+
+        // Variable del problema
+        int[] numeros = new int[10];
+
+        // Bucle while para introducir datos
+        int i = 0;
+        while (true) {
+
+            System.out.println("Introduzca un numero para insertarlo: ");
+            num = scan.nextInt();
+
+            try {
+
+                // Compruebo el numero
+                checkPositivo(num);
+
+                // Inserto el numero
+                numeros[i] = num;
+                i++;
+
+            } catch (InputMismatchException e) {
+                e.printStackTrace();
+            } catch (IndexOutOfBoundsException e) {
+                System.err.println("No se pueden anadir mas numeros");
+                break;
+            }
+        }
+    }
+
+    public static void checkPositivo(int num) throws InputMismatchException {
+
+        if (num < 0){
+            throw new InputMismatchException("Numeros negativos no permitidos");
+        }
+
     }
 
 
