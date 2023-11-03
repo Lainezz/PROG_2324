@@ -28,15 +28,15 @@ public class CalculadoraMierder {
             switch (op){
                 case '+': {
 
-                    resultado = num1 + num2;
+                    resultado = suma(num1, num2);
                     break;
                 }
                 case '-': {
-                    resultado = num1 - num2;
+                    resultado = resta(num1, num2);
                     break;
                 }
                 case '*': {
-                    resultado = num1 * num2;
+                    resultado = mult(num1, num2);
                     break;
                 }
                 case '/': {
@@ -44,7 +44,7 @@ public class CalculadoraMierder {
                     break;
                 }
                 case '%': {
-                    resultado = num1 % num2;
+                    resultado = resto(num1, num2);
                     break;
                 }
                 default: {
@@ -64,6 +64,7 @@ public class CalculadoraMierder {
     }
 
 
+
     public static double dividir(double num1, double num2) throws ArithmeticException {
         
         double resultadoAux = 0.0; // Declaro una variable de tipo double que se llama resultadoAux
@@ -73,6 +74,29 @@ public class CalculadoraMierder {
         }
         resultadoAux = num1 / num2;
         return  resultadoAux;
+    }
+
+    public static double resto(double num1, double num2) throws ArithmeticException {
+
+        double resultadoAux = 0.0; // Declaro una variable de tipo double que se llama resultadoAux
+
+        if (num2 == 0.0){
+            throw new ArithmeticException();
+        }
+        resultadoAux = num1 % num2;
+        return  resultadoAux;
+    }
+
+    public static double suma(double num1, double num2) {
+        return num1 + num2;
+    }
+
+    public static double resta(double num1, double num2) {
+        return num1 - num2;
+    }
+
+    public static double mult(double num1, double num2) {
+        return num1 * num2;
     }
 
 
