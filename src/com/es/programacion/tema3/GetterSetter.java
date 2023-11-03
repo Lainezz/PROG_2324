@@ -60,12 +60,15 @@ public class GetterSetter {
         }
     }
 
+    /**
+     * Funcion que comprueba si un numero es positivo o no
+     * @param num Numero a comprobar
+     * @throws InputMismatchException Si el numero es negativo
+     */
     public static void checkPositivo(int num) throws InputMismatchException {
-
         if (num < 0){
             throw new InputMismatchException("Numeros negativos no permitidos");
         }
-
     }
 
 
