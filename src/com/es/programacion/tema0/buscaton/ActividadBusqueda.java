@@ -196,7 +196,7 @@ public class ActividadBusqueda {
 
 	/**
 	 * Generador de array de enteros DESordenado
-	 * @param pos nº de posiciones que tendrá el array de enteros
+	 * @param arr nº de posiciones que tendrá el array de enteros
 	 * @return
 	 */
 	private int[] desordenarArray(int[] arr) {

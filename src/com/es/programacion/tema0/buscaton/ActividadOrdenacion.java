@@ -202,7 +202,7 @@ public class ActividadOrdenacion {
 	/**
 	 * Generador de array de enteros DESordenado
 	 * 
-	 * @param pos n� de posiciones que tendrá el array de enteros
+	 * @param arr n� de posiciones que tendrá el array de enteros
 	 * @return
 	 */
 	private int[] desordenarArray(int[] arr) {
