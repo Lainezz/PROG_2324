@@ -35,12 +35,9 @@ public class LoginMejorado2 {
         // Tercero: Hacer el menú de inicio
         System.out.println("Bienvenid@ al sistema");
         do {
-            System.out.println("" +
-                    "\nIntroduzca una opcion valida" +
-                    "\n1. Login" +
-                    "\n2. Registro/Alta" +
-                    "\n3. Baja" +
-                    "\n0. Salir");
+
+            // Muestro el menu
+            menu();
 
             // Leemos por teclado la opcion
             opc = scan.nextInt();
@@ -154,9 +151,17 @@ public class LoginMejorado2 {
 
 
         } while (opc != 0);
+    }
 
-
-
-
+    /**
+     * Funcion que imprime por pantalla el menu principal
+     */
+    public static void menu() {
+        System.out.println("" +
+                "\nIntroduzca una opcion valida" +
+                "\n1. Login" +
+                "\n2. Registro/Alta" +
+                "\n3. Baja" +
+                "\n0. Salir");
     }
 }
