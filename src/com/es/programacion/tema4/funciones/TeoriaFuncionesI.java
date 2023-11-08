@@ -8,8 +8,6 @@ public class TeoriaFuncionesI {
     public static void main(String[] args) {
 
         // VAMOS A VER LO QUE PODEMOS HACER DE LA OTRA CLASE
-        int resultado = TeoriaFuncionesII.sumar(2,3);
-        System.out.println(resultado);
 
         boolean esValido = DniValidator.checkDNI("12345678A");
         if (esValido) {
@@ -17,11 +15,6 @@ public class TeoriaFuncionesI {
         } else {
             System.out.println("El DNI no es valido");
         }
-
-
-
-
-
 
         /**
          * Vamos a hacer una función que dada una fecha de nacimiento, devuelva el signo zodiacal de esa persona
@@ -67,6 +60,18 @@ public class TeoriaFuncionesI {
          *
          *
          */
+
+        /**
+         * Escribir un método que reciba por parámetros un String (la contraseña)
+         * y devuelva la misma contraseña ya encriptada, haciendo uso del cifrado
+         * césar
+         *
+         * Ejemplo:
+         * pass = "pass123"
+         * pass retornada = "sdvv456"
+         */
+
+
 
     } // FIN DE MAIN
 
