@@ -1,6 +1,7 @@
 package com.es.programacion.tema4.funciones;
 
 import com.es.programacion.tema4.funcionesII.DniValidator;
+import com.es.programacion.tema4.funcionesII.CypherUtils;
 
 public class TeoriaFuncionesI {
 
@@ -69,7 +70,28 @@ public class TeoriaFuncionesI {
          * Ejemplo:
          * pass = "pass123"
          * pass retornada = "sdvv456"
+         *
+         * Consejos:
+         * - Crear una variable auxiliar para almacenar la nueva password
+         * - Recorrer el string y tratar cada uno de los caracteres individualmente
+         * - Sumar 3 a cada caracter -> obtenemos un nuevo caracter
+         * - Concatenar dicho caracter nuevo a la variable auxiliar
+         *
+         * Formato del método:
+         *
+         * public static String cifrarPasswd(String password){
+         *
+         *      String passwordCifrada = "";
+         *
+         *
+         *      return passwordCifrada;
+         * }
          */
+        String unaCadenaParaCifrar = "pass123";
+        CypherUtils.cifrarPass(unaCadenaParaCifrar);
+
+
+
 
 
 
