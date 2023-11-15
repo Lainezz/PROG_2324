@@ -6,8 +6,8 @@ public class Utils {
 
     public static final int PREF_WIDTH = 600;
     public static final int PREF_HEIGHT = 600;
-    public static final int PREF_WIDTH_IMG = 300;
-    public static final int PREF_HEIGHT_IMG = 300;
+    public static final int PREF_WIDTH_HALF = 300;
+    public static final int PREF_HEIGHT_HALF = 300;
 
     public static final String[] NOMBRES_POKEMON = {
             "Pikachu",
@@ -23,6 +23,7 @@ public class Utils {
             "Magikarp"};
 
     public static final Dimension SM = new Dimension(10,10);
-    public static final Dimension MD = new Dimension(20,30);
+    public static final Dimension MD = new Dimension(30,30);
+    public static final Dimension BG = new Dimension(50,50);
 
 }

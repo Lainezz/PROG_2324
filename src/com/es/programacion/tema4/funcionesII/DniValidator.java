@@ -2,6 +2,9 @@ package com.es.programacion.tema4.funcionesII;
 
 public class DniValidator {
 
+    // Array con las letras del DNI en sus posiciones correctas
+    private static char[] letrasDNI = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E',};
+
     /**
      * Método que comprueba la validez de un DNI
      * @param dni
@@ -10,7 +13,7 @@ public class DniValidator {
     public static boolean checkDNI(String dni){
 
         char letraDNI = dni.charAt(dni.length()-1);
-        if (comprobarLength(dni) && checkCaracteres(dni) && comprobarSiEsLetra(letraDNI)) {
+        if (comprobarLength(dni) && checkCaracteres(dni) && comprobarSiEsLetra(letraDNI) && comprobarParteNumerica(dni) && comprobarLetra(dni)) {
             return true;
         } else {
             return false;
@@ -95,6 +98,38 @@ public class DniValidator {
         }
         return true;
 
+    }
+
+    /**
+     * Metodo que comprueba que la letra del DNI es la correcta
+     * @param dni
+     * @return true - letra correcta false - letra incorrecta
+     */
+    public static boolean comprobarLetra(String dni) {
+        String parteNumerica = ""; // String auxiliar para almacenar la parte numerica
+        try {
+            // Para obtener la parte numerica, hago un substring de la posicion 0 a la 8
+            parteNumerica = dni.substring(0, 8);
+            System.out.println("La parte numerica es: "+parteNumerica);
+
+            // Por ultimo, voy a comprobar que EFECTIVAMENTE ES UN NUMERO
+            int numeroDNI = Integer.parseInt(parteNumerica);
+            System.out.println("La parte numerica como numero es: "+numeroDNI);
+
+            int resto = numeroDNI % 23;
+            char letraDNI = dni.charAt(dni.length()-1);
+
+            if(letrasDNI[resto] != letraDNI) {
+                return false;
+            }
+
+        } catch (Exception e) {
+            // Si lanza una excepcion significa que la parte numerica del DNI
+            // ES INCORRECTA
+            System.out.println("Error en los datos");
+            return false;
+        }
+        return true;
     }
 
 

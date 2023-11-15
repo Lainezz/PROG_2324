@@ -1,8 +1,8 @@
 package com.es.programacion.pruebas.pokemon.panel;
 
 import com.es.programacion.pruebas.pokemon.assets.Media;
-import com.es.programacion.pruebas.pokemon.label.LabelPokemon;
-import com.es.programacion.pruebas.pokemon.panel.hijos.selEquipo.hijos.ZonaEleccion;
+import com.es.programacion.pruebas.pokemon.panel.zonas.ZonaEleccion;
+import com.es.programacion.pruebas.pokemon.panel.zonas.ZonaSeleccion;
 import com.es.programacion.pruebas.pokemon.utils.Utils;
 
 import javax.swing.*;
@@ -14,9 +14,11 @@ import java.awt.event.ComponentListener;
 public class PanelEquipo extends JPanel {
 
     private ZonaEleccion zonaEleccion;
-    private JPanel zonaSeleccion;
 
-    public String[] equipo = new String[6];
+    private ZonaSeleccion zonaSeleccion;
+
+    private String[] equipoJ1 = new String[6];
+    private String[] equipoJ2 = new String[6];
 
     ComponentListener cl = new ComponentAdapter() {
         @Override
@@ -42,48 +44,37 @@ public class PanelEquipo extends JPanel {
         this.zonaEleccion = new ZonaEleccion(this);
         this.add(zonaEleccion, BorderLayout.NORTH);
 
-        this.zonaSeleccion = new JPanel();
-        zonaSeleccion.setLayout(new FlowLayout());
-        this.add(zonaSeleccion, BorderLayout.CENTER);
+        this.zonaSeleccion = new ZonaSeleccion(this);
 
+
+        JPanel otro = new JPanel();
+        otro.setLayout(new GridLayout(1,2));
+        otro.setSize(new Dimension(Utils.PREF_WIDTH_HALF, Utils.PREF_HEIGHT_HALF));
+        JLabel i = new JLabel("Hola");
+        otro.add(i);
+        otro.add(zonaSeleccion);
+
+
+        this.add(otro, BorderLayout.CENTER);
         this.addComponentListener(cl);
     }
 
     private void inicializarEquipo() {
-        for (int i = 0; i <= equipo.length - 1; i++) {
-            equipo[i] = "";
+        for (int i = 0; i <= equipoJ1.length - 1; i++) {
+            equipoJ1[i] = "";
         }
     }
 
-    public void addPokemonToEquipo(String pokemon) {
-        for (int i = 0; i <= equipo.length - 1; i++) {
-            if ("".equalsIgnoreCase(equipo[i])) {
-                equipo[i] = pokemon;
-                break;
-            }
-        }
-        updateZonaSeleccion();
+    public ZonaSeleccion getZonaSeleccion() {
+        return zonaSeleccion;
     }
 
-    public void removePokemonFromEquipo(String pokemon) {
-        for (int i = 0; i <= equipo.length - 1; i++) {
-            if (pokemon.equalsIgnoreCase(equipo[i])) {
-                equipo[i] = "";
-                break;
-            }
-        }
-        updateZonaSeleccion();
+    public String[] getEquipoJ1() {
+        return this.equipoJ1;
+    }
+    public String[] getEquipoJ2() {
+        return this.equipoJ2;
     }
 
-
-    private void updateZonaSeleccion() {
-
-        zonaSeleccion.removeAll();
-        for (int i = 0; i <= equipo.length - 1; i++) {
-            LabelPokemon label = new LabelPokemon(equipo[i], Utils.MD, this);
-            zonaSeleccion.add(label);
-        }
-        zonaSeleccion.revalidate();
-    }
 
 }

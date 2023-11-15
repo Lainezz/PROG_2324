@@ -12,22 +12,22 @@ public class LabelPokemon extends JLabel {
 
     private BufferedImage image;
     private Dimension size;
-    private PanelEquipo parent;
+    private PanelEquipo panelEquipo;
     public String nombrePokemon = "";
 
     MouseListener ml = new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
-            parent.removePokemonFromEquipo(nombrePokemon);
+            panelEquipo.getZonaSeleccion().removePokemonFromEquipo(nombrePokemon);
         }
     };
 
 
 
-    public LabelPokemon(String nombrePokemon, Dimension size, PanelEquipo parent) {
+    public LabelPokemon(String nombrePokemon, Dimension size, PanelEquipo panelEquipo) {
         this.nombrePokemon = nombrePokemon;
         this.size = size;
-        this.parent = parent;
+        this.panelEquipo = panelEquipo;
 
         image = Media.imageFactory(this.nombrePokemon);
 

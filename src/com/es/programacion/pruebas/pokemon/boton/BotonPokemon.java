@@ -1,7 +1,7 @@
 package com.es.programacion.pruebas.pokemon.boton;
 
 import com.es.programacion.pruebas.pokemon.assets.Media;
-import com.es.programacion.pruebas.pokemon.panel.hijos.selEquipo.hijos.ZonaEleccion;
+import com.es.programacion.pruebas.pokemon.panel.zonas.ZonaEleccion;
 
 
 import javax.swing.*;
@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
 
 public class BotonPokemon extends JButton {
 
-    private ZonaEleccion parent;
+    private ZonaEleccion zonaEleccion;
     private BufferedImage imagenPokemon, selectedBox;
     private Dimension size;
     public String nombrePokemon = "";
@@ -21,7 +21,7 @@ public class BotonPokemon extends JButton {
     ActionListener al = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            parent.parent.addPokemonToEquipo(nombrePokemon);
+            zonaEleccion.panelEquipo.getZonaSeleccion().addPokemonToEquipo(nombrePokemon);
         }
     };
 
@@ -44,8 +44,8 @@ public class BotonPokemon extends JButton {
         }
     };
 
-    public BotonPokemon(String nombrePokemon, Dimension size, ZonaEleccion parent) {
-        this.parent = parent;
+    public BotonPokemon(String nombrePokemon, Dimension size, ZonaEleccion zonaEleccion) {
+        this.zonaEleccion = zonaEleccion;
         this.nombrePokemon = nombrePokemon;
         this.size = size;
 
