@@ -1,10 +1,28 @@
 package com.es.programacion.tema4.clasesDNI;
 
+import com.es.programacion.tema4.clasesDNI.clases.VerificadorDNI;
+
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Hola Mundo");
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Introduzca su dni:");
+
+        String dniUsuario = scan.next();
+
+        boolean comprobarLetra = VerificadorDNI.comprobarLetra(dniUsuario);
+        boolean comprobarLongitud = VerificadorDNI.comprobarLongitud(dniUsuario);
+        boolean comprobarParteNumerica = VerificadorDNI.comprobarParteNumerica(dniUsuario);
+        boolean comprobarLetraCorrecta = VerificadorDNI.comprobarLetraCorrecta(dniUsuario);
+
+        if(comprobarLetra && comprobarLongitud && comprobarParteNumerica && comprobarLetraCorrecta){
+            System.out.println("Su DNI es correcto, sosio");
+        } else {
+            System.out.println("Su DNI es incorrecto.");
+        }
 
     }
 }

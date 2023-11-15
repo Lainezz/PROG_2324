@@ -3,7 +3,7 @@ package com.es.programacion.tema4.clasesDNI.clases;
 public class VerificadorDNI {
 
     private static String dni = "";
-    private static char[] letrasDNI = {};
+    private static char[] letrasDNI = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E',};
 
     /**
      * Metodo que comprueba que la ultima posicion es una letra
@@ -40,9 +40,20 @@ public class VerificadorDNI {
      * @return true si la letra es correcta
      */
     public static boolean comprobarLetraCorrecta(String dni) {
+        // Obtener la letraDNI
+        char letraDNI = dni.charAt(dni.length()-1);
+
+        // Obtener la parte numerica
+        String parteNumerica = dni.substring(0, 8);
+        int numero = Integer.parseInt(parteNumerica);
+
+        // Ahora hago la operacion
+        int resto = numero % 23;
+
+        // Compruebo la validez de la letra
+        return letrasDNI[resto] == letraDNI ? true : false;
 
 
-        return true;
     }// FIN COMPROBARLetraCorrecta
 
 
