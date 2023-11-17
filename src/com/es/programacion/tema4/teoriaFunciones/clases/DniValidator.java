@@ -1,4 +1,4 @@
-package com.es.programacion.tema4.funcionesII;
+package com.es.programacion.tema4.teoriaFunciones.clases;
 
 public class DniValidator {
 

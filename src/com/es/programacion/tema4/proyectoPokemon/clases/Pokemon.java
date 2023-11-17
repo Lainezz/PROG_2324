@@ -1,4 +1,4 @@
-package com.es.programacion.tema4.clases;
+package com.es.programacion.tema4.proyectoPokemon.clases;
 
 import java.util.Scanner;
 
@@ -30,22 +30,7 @@ public class Pokemon {
      * @return double multiplicador de daño
      */
 
-    public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Introduzca un pokemon: ");
-        String pokemonDeUsuario = scan.next();
-
-        boolean pokemonEsValido = false;
-        pokemonEsValido = esValido(pokemonDeUsuario);
-
-        if(pokemonEsValido == true) {
-            System.out.println("Pika!");
-        } else {
-            System.out.println("no pika");
-        }
-
-    }
 
     /**
      * Metodo que comprueba si el pokemon es pikachu

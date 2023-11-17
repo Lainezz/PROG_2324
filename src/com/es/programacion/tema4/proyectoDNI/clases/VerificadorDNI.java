@@ -1,4 +1,4 @@
-package com.es.programacion.tema4.clasesDNI.clases;
+package com.es.programacion.tema4.proyectoDNI.clases;
 
 public class VerificadorDNI {
 

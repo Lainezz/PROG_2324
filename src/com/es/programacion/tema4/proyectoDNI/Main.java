@@ -1,6 +1,6 @@
-package com.es.programacion.tema4.clasesDNI;
+package com.es.programacion.tema4.proyectoDNI;
 
-import com.es.programacion.tema4.clasesDNI.clases.VerificadorDNI;
+import com.es.programacion.tema4.proyectoDNI.clases.VerificadorDNI;
 
 import java.util.Scanner;
 
