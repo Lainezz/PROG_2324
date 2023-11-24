@@ -3,8 +3,8 @@ package com.es.programacion.tema4.proyectoPersona.clases;
 public class Persona {
 
     // ATRIBUTOS DE CLASE
-    String nombre, dni, apellidos, colorPiel, colorPelo;
-    int edad;
+    public String nombre, dni, apellidos, colorPiel, colorPelo;
+    public int edad;
     double altura;
 
     // METODOS DE CLASE
