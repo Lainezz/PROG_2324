@@ -50,6 +50,7 @@ public class Main {
             System.out.println("1. Anadir stock");
             System.out.println("2. Venta");
             System.out.println("3. Consultar stock");
+
             System.out.println("0. Salir");
             opc = scan.nextInt();
 
