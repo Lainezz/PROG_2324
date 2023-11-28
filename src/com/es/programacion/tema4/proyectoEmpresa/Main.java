@@ -8,34 +8,21 @@ public class Main {
 
     public static void main(String[] args) {
         // SIMULAR UNA EMPRESA, DONDE SE COMPRAN Y VENDEN PRODUCTOS
-        Articulo pantalon = new Articulo();
-        pantalon.nombre = "Pantalon Cargo";
+        Articulo pantalon = new Articulo("P24", "Pantalon Cargo", "G", 5.0);
         pantalon.descripcion = "Pantalones que son anchos por arriba y cerrados por abajo.\nCon muchos bolsillos";
-        pantalon.id = "P24";
         pantalon.stock = 100;
-        pantalon.precioBase = 5.0;
 
-        Articulo sudadera = new Articulo();
-        sudadera.nombre = "Sudadera";
+        Articulo sudadera = new Articulo("S30", "Sudadera", "G", 10.0);
         sudadera.descripcion = "Sudadera con capucha to flama";
-        sudadera.id = "S30";
         sudadera.stock = 200;
-        sudadera.precioBase = 10.0;
 
-        Articulo tenis = new Articulo();
-        tenis.nombre = "Tenis";
+        Articulo tenis = new Articulo("T01", "Tenis", "G", 40.0);
         tenis.descripcion = "Bambas deportivas, zapatos deportivas, deportes";
-        tenis.id = "T01";
         tenis.stock = 300;
-        tenis.precioBase = 40.0;
 
         pantalon.tipo = "G";
         sudadera.tipo = "G";
         tenis.tipo = "G";
-
-        pantalon.calcularPrecioConIva();
-        sudadera.calcularPrecioConIva();
-        tenis.calcularPrecioConIva();
 
         pantalon.imprimirDatosProducto();
         sudadera.imprimirDatosProducto();
