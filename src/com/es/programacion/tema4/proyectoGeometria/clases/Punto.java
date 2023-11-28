@@ -19,6 +19,27 @@ public class Punto {
     }
 
     // Métodos
+    /**
+     * Método que calcule la distancia entre dos puntos
+     * El método devuelve un double (que es la distancia)
+     * El método recibe por parámetros otro punto
+     */
+    public double calcularDistancia(Punto p) {
+        // Declarar una variable de tipo double que vaya a almacenar la distancia
+        double distancia = 0.0;
+
+        // Aplicamos la formula matemática para el calculo de la distancia
+        // d = √((x2 - x1)² + (y2 - y1)²)
+        double resta1 = p.coorX - this.coorX;
+        double resta2 = p.coorY - this.coorY;
+        double cuadrado1 = Math.pow(resta1, 2.0);
+        double cuadrado2 = Math.pow(resta2, 2.0);
+        distancia = Math.sqrt(cuadrado1 + cuadrado2);
+
+        // Retornamos el valor de la variable distancia
+        return distancia;
+
+    }
 
 
 

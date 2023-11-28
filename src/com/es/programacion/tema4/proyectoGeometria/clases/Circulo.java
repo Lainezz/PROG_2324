@@ -34,6 +34,17 @@ public class Circulo {
         System.out.println("Soy un circulo con radio "+this.radio+" , area "+this.area+ " y diametro "+this.diametro);
     }
 
+    /**
+     * Método que compare dos circulos para ver cual es el mayor
+     */
+    public void compararCirculos(Circulo c) {
+        if(this.radio > c.radio) {
+            System.out.println("El circulo con radio "+this.radio+" es mayor");
+        } else {
+            System.out.println("El circulo con radio "+c.radio+" es mayor");
+        }
+    }
+
 
 
 

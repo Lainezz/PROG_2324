@@ -19,4 +19,18 @@ public class Cuadrado {
         }
         this.area = this.lado * this.lado;
     }
+
+    /**
+     * Método que compare dos cuadrados y nos diga cuál es el mayor
+     */
+    public void compararCuadrados(Cuadrado c){
+
+        if (this.lado > c.lado) {
+            System.out.println("El cuadrado con lado "+this.lado+" es el mayor");
+        } else {
+            System.out.println("El cuadrado con lado "+c.lado+" es el mayor");
+        }
+
+    }
+
 }
