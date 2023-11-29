@@ -7,10 +7,13 @@ public class Persona {
     public int edad;
     public double altura;
 
+    public Direccion direccion;
+
     /**
      * Añadir un atributo publico "estaTrabajando"
      * Atributo de tipo boolean inicializado por defecto a false.
      */
+    public boolean estaTrabajando = false;
 
 
     // CONSTRUCTOR DE CLASE
@@ -18,6 +21,14 @@ public class Persona {
      * Definir un constructor de clase para Persona
      * Se le pasa el nombre, dni, apellidos y edad
      */
+    public Persona(String dni, String nombre, String apellidos, int edad, Direccion dir) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.edad = edad;
+
+        this.direccion = dir;
+    }
 
 
     // METODOS DE CLASE
@@ -47,11 +58,22 @@ public class Persona {
      * Método que comprueba si esta persona es mayor de edad
      * El método devuelve un boolean
      */
+    public boolean esMayorDeEdad() {
+        return this.edad>=18;
+    }
 
     /**
      * Método que comprueba si dos personas son iguales
      * El método devuelve un boolean
      */
+    public boolean sonIguales(Persona otraPersona) {
+
+        if(this.dni.equals(otraPersona.dni) && this.nombre.equals(otraPersona.apellidos) && this.apellidos.equals(otraPersona.apellidos)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     /**
      * Método que da de alta y de baja a la persona en un trabajo
@@ -60,6 +82,16 @@ public class Persona {
      * Si está trabajando -> Se pone a que ya no está trabajando
      * Si no está trabajando -> Se pone a que sí está trabajando
      */
+    public void cambiarEstadoTrabajo() {
+        if(this.estaTrabajando) {
+            this.estaTrabajando = false;
+        } else {
+            this.estaTrabajando = true;
+        }
+
+        // Otra solucion mucho más elegante (Codigo de Angel)
+        // this.estaTrabajando = !this.estaTrabajando;
+    }
 
 
 
