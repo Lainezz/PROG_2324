@@ -27,6 +27,11 @@ public class Direccion {
             this.cp = cp;
             this.localidad = localidad;
             this.provincia = provincia;
+        } else {
+            this.cp = "";
+            this.localidad = "";
+            this.provincia = "";
+            throw new IllegalArgumentException("Datos de localidad incorrectos");
         }
     }
 

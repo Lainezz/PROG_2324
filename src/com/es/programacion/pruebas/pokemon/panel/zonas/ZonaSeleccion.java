@@ -14,7 +14,7 @@ public class ZonaSeleccion extends JPanel {
         this.panelEquipo = parent;
 
         this.setLayout(new GridLayout(3,3));
-        this.setSize(new Dimension(Utils.PREF_WIDTH_HALF/2, Utils.PREF_HEIGHT_HALF/2));
+        //this.setSize(new Dimension(Utils.PREF_WIDTH_HALF/2, Utils.PREF_HEIGHT_HALF/2));
         //this.add(zonaSeleccion, BorderLayout.CENTER);
 
 

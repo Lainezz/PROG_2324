@@ -3,6 +3,8 @@ package com.es.programacion.pruebas.pokemon.panel;
 import com.es.programacion.pruebas.pokemon.assets.Media;
 import com.es.programacion.pruebas.pokemon.panel.zonas.ZonaEleccion;
 import com.es.programacion.pruebas.pokemon.panel.zonas.ZonaSeleccion;
+import com.es.programacion.pruebas.pokemon.paneles.SeparadorHorizontal;
+import com.es.programacion.pruebas.pokemon.paneles.SeparadorVertical;
 import com.es.programacion.pruebas.pokemon.utils.Utils;
 
 import javax.swing.*;
@@ -15,7 +17,8 @@ public class PanelEquipo extends JPanel {
 
     private ZonaEleccion zonaEleccion;
 
-    private ZonaSeleccion zonaSeleccion;
+    private ZonaSeleccion zonaSeleccionJ1;
+    private ZonaSeleccion zonaSeleccionJ2;
 
     private String[] equipoJ1 = new String[6];
     private String[] equipoJ2 = new String[6];
@@ -38,24 +41,28 @@ public class PanelEquipo extends JPanel {
         inicializarEquipo();
 
         // Seteo de propiedades del JPanel
-        this.setSize(new Dimension(Utils.PREF_WIDTH, Utils.PREF_HEIGHT));
+        //this.setSize(new Dimension(Utils.PREF_WIDTH, Utils.PREF_HEIGHT));
         this.setLayout(new BorderLayout());
 
         this.zonaEleccion = new ZonaEleccion(this);
         this.add(zonaEleccion, BorderLayout.NORTH);
 
-        this.zonaSeleccion = new ZonaSeleccion(this);
+        this.zonaSeleccionJ1 = new ZonaSeleccion(this);
+        this.zonaSeleccionJ2 = new ZonaSeleccion(this);
 
+
+        this.add(new SeparadorHorizontal(this), BorderLayout.CENTER);
 
         JPanel otro = new JPanel();
-        otro.setLayout(new GridLayout(1,2));
-        otro.setSize(new Dimension(Utils.PREF_WIDTH_HALF, Utils.PREF_HEIGHT_HALF));
-        JLabel i = new JLabel("Hola");
+        otro.setLayout(new GridLayout(1,3));
+        otro.setPreferredSize(new Dimension(Utils.PREF_WIDTH_HALF, Utils.PREF_HEIGHT_HALF));
+        JLabel i = new JLabel("vs");
+        otro.add(zonaSeleccionJ1);
         otro.add(i);
-        otro.add(zonaSeleccion);
+        otro.add(zonaSeleccionJ2);
 
 
-        this.add(otro, BorderLayout.CENTER);
+        this.add(otro, BorderLayout.SOUTH);
         this.addComponentListener(cl);
     }
 
@@ -63,10 +70,14 @@ public class PanelEquipo extends JPanel {
         for (int i = 0; i <= equipoJ1.length - 1; i++) {
             equipoJ1[i] = "";
         }
+
+        for (int i = 0; i <= equipoJ2.length - 1; i++) {
+            equipoJ2[i] = "";
+        }
     }
 
-    public ZonaSeleccion getZonaSeleccion() {
-        return zonaSeleccion;
+    public ZonaSeleccion getZonaSeleccionJ1() {
+        return zonaSeleccionJ1;
     }
 
     public String[] getEquipoJ1() {

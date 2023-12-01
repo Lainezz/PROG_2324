@@ -4,8 +4,10 @@ import java.awt.*;
 
 public class Utils {
 
-    public static final int PREF_WIDTH = 600;
-    public static final int PREF_HEIGHT = 600;
+    public static final int LINEA = 10;
+
+    public static final int PREF_WIDTH = 800;
+    public static final int PREF_HEIGHT = 800;
     public static final int PREF_WIDTH_HALF = 300;
     public static final int PREF_HEIGHT_HALF = 300;
 

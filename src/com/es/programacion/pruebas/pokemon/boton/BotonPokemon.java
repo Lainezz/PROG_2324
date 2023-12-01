@@ -21,7 +21,7 @@ public class BotonPokemon extends JButton {
     ActionListener al = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            zonaEleccion.panelEquipo.getZonaSeleccion().addPokemonToEquipo(nombrePokemon);
+            zonaEleccion.panelEquipo.getZonaSeleccionJ1().addPokemonToEquipo(nombrePokemon);
         }
     };
 

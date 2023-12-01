@@ -12,7 +12,7 @@ public class ZonaEleccion extends JPanel {
     private static Dimension size = new Dimension(Utils.PREF_WIDTH_HALF, Utils.PREF_HEIGHT_HALF);
     public PanelEquipo panelEquipo;
     private GridLayout grid;
-    private BotonPokemon[] pokemons;
+    private BotonPokemon[] pokemons = new BotonPokemon[10];
 
 
     public ZonaEleccion(PanelEquipo panelEquipo) {
@@ -22,8 +22,6 @@ public class ZonaEleccion extends JPanel {
 
         grid = new GridLayout(2, 5);
         this.setLayout(grid);
-
-        pokemons = new BotonPokemon[10];
 
         for (int i = 0; i <= pokemons.length - 1; i++) {
             pokemons[i] = new BotonPokemon(Utils.NOMBRES_POKEMON[i], Utils.MD, this);

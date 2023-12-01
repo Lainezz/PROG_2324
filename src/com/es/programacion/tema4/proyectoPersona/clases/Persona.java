@@ -30,6 +30,10 @@ public class Persona {
         this.direccion = dir;
     }
 
+    public Persona(String dni) {
+        this.dni = dni;
+    }
+
 
     // METODOS DE CLASE
     /**
@@ -39,6 +43,8 @@ public class Persona {
         System.out.println("" +
                 "\nHola, mi nombre es "+this.nombre+" " +
                 "\ny tengo "+this.edad+" anios.");
+
+        System.out.format("Vivo en la calle %s numero %d , de %s (%s)", this.direccion.calle, this.direccion.numero, this.direccion.localidad, this.direccion.provincia);
     }
 
     /**

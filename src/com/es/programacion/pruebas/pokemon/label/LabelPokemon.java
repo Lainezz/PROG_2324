@@ -18,7 +18,7 @@ public class LabelPokemon extends JLabel {
     MouseListener ml = new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
-            panelEquipo.getZonaSeleccion().removePokemonFromEquipo(nombrePokemon);
+            panelEquipo.getZonaSeleccionJ1().removePokemonFromEquipo(nombrePokemon);
         }
     };
 
