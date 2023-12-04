@@ -1,6 +1,6 @@
-## Proyecto Ubri Bank
+## Proyecto Clase UbriBank
 
-La empresa LibreCoders te ha contratado para desarrollar un software de gestión de una cuenta
+La empresa NewbiesCoders te ha contratado para desarrollar un software de gestión de una cuenta
 bancaria para la cooperativa de banca ética y sostenible UbriBank. Se trata de una aplicación Java
 formada por una clase principal UbriBank y otra llamada CuentaBancaria.
 El programa pedirá los datos necesarios para crear una cuenta bancaria. Si son válidos, creará la
