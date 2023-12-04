@@ -3,6 +3,7 @@
 La empresa NewbiesCoders te ha contratado para desarrollar un software de gestión de una cuenta
 bancaria para la cooperativa de banca ética y sostenible UbriBank. Se trata de una aplicación Java
 formada por una clase principal UbriBank y otra llamada CuentaBancaria.
+
 El programa pedirá los datos necesarios para crear una cuenta bancaria. Si son válidos, creará la
 cuenta y mostrará el menú principal para permitir actuar sobre la cuenta. Tras cada acción se
 volverá a mostrar el menú.
@@ -27,7 +28,7 @@ nunca). El saldo será de 0 euros y la cuenta no tendrá movimientos asociados.
 
 El saldo solo puede variar cuando se produce un ingreso (entra dinero en la cuenta) o una retirada
 (sale dinero de la cuenta). En ambos casos se deberá registrar la operación en los movimientos. Los
-ingresos y retiradas solo pueden ser de valores superiores a cero.
+ingresos y retiradas sólo pueden ser de valores superiores a cero.
 
 El saldo de una cuenta nunca podrá ser inferior a -50 euros. Si se produce un movimiento que
 deje la cuenta con un saldo negativo (no inferior a -50) habrá que mostrar el mensaje “AVISO: Saldo
