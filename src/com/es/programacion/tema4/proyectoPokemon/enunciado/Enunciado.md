@@ -34,7 +34,7 @@ ataques: Ataque[]
 
 *Constructores de clase*
 ```
-Pokemon(nombre: String, tipo: Tipo, fuerza: int, vida: int)
+Pokemon(nombre: String, tipo: Tipo, vida: int)
 ```
 
 #### *Clase Tipo*
@@ -68,9 +68,6 @@ que se indican en el apartado *atributos de clase*
 
 Tendrá un constructor personalizado, el cual recibe por parámetros todo lo que se indica dentro del apartado
 
-*Constructores de clase*
-```
-```
 
 *Atributos de clase*
 ```
