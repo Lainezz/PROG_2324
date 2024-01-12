@@ -120,6 +120,29 @@ public class Main {
         articulos.add(barcelo);
 
 
+        // Un pequeño programa que muestre por pantalla:
+        // - Los artículos cuyo stock (cuantosQuedan) sea <= 0
+        // - Los artículos cuyo stock esté apunto de acabarse (stock <= 10)
+
+        // Recorreis el ArrayList y ponéis dentro las condiciones que se os piden (x2)
+        // Foreach
+        System.out.println("Productos sin stock:");
+        for(Articulo articulo : articulos) {
+            if(articulo.getCuantosQuedan()<=0) {
+                System.out.println(articulo.getNombre());
+            }
+        }
+
+        System.out.println("Productos apunto de acabarse:");
+        for(Articulo articulo : articulos) {
+            if(articulo.getCuantosQuedan()<=10) {
+                System.out.println(articulo.getNombre());
+            }
+        }
+
+
+
+
 
 
 
