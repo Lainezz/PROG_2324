@@ -4,6 +4,7 @@ import com.es.programacion.tema5.proyectoAlmacen.clases.Articulo;
 import com.es.programacion.tema5.proyectoMRajoy.Persona;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -96,8 +97,8 @@ public class Main {
         Articulo libro = new Articulo("Programacion", 70, 350, "G");
         Articulo estuche = new Articulo("Estuche Maquillaje", 25, 300, "G");
         Articulo chandal = new Articulo("Chandal nike uapo uapo", 200, 100, "G");
-        Articulo vape = new Articulo("Vape de contrabando", 10, 20, "G");
-        Articulo barcelo = new Articulo("Ron semibarato", 14, 15, "G");
+        Articulo vape = new Articulo("Vape de contrabando", 10, 10, "G");
+        Articulo barcelo = new Articulo("Ron semibarato", 14, 1, "G");
 
         // Añadir todos los objetos al ArrayList articulos
         articulos.add(raqueta);
@@ -125,7 +126,25 @@ public class Main {
         // - Los artículos cuyo stock esté apunto de acabarse (stock <= 10)
 
         // Recorreis el ArrayList y ponéis dentro las condiciones que se os piden (x2)
+        // For normal
+
+        System.out.println("Articulos sin stock: ¡COMPRAR MAS!"); // Sout informativo
+        for(int i=0; i<articulos.size(); i++) { // Recorro el ArrayList articulos
+            if(articulos.get(i).getCuantosQuedan() <= 0) { // Para cada uno de los articulos, hago una condicion
+                System.out.println(articulos.get(i).getNombre()); // Imprimo por pantalla el nombre del articulo
+            }
+        }
+
+
+        System.out.println("Articulos apunto de agotarse:"); // Sout informativo
+        for(int i=0; i<articulos.size(); i++) { // Recorro el ArrayList articulos
+            if(articulos.get(i).getCuantosQuedan() <= 10) { // Para cada uno de los articulos, hago una condicion
+                System.out.println(articulos.get(i).getNombre()); // Imprimo por pantalla el nombre del articulo
+            }
+        }
+
         // Foreach
+        /*
         System.out.println("Productos sin stock:");
         for(Articulo articulo : articulos) {
             if(articulo.getCuantosQuedan()<=0) {
@@ -139,16 +158,57 @@ public class Main {
                 System.out.println(articulo.getNombre());
             }
         }
+        */
 
 
+        // Pequeño menú para hacer diferentes operaciones con los artículos
+        /*
+        Menú Articulo
+        1. Contar cuántos artículos hay con stock <= 0
+        2. Contar cuántos artículos hay de tipo SR
+        3. Contar cuántos artículos hay con un precio menor que 100€
+        4. Decir cuál es el artículo con mayor precio
+        5. Decir cuál es el artículo con menor precio
+         */
 
+        Scanner scan = new Scanner(System.in);
+        System.out.println("""
+                Menú Articulo
+                1. Contar cuántos artículos hay con stock <= 0
+                2. Contar cuántos artículos hay de tipo SR
+                3. Contar cuántos artículos hay con un precio menor que 100€
+                4. Decir cuál es el artículo con mayor precio
+                5. Decir cuál es el artículo con menor precio
+                """);
+        System.out.println("Indique la opción deseada: ");
+        int opc;
+        try  {
+            opc = scan.nextInt();
 
+            switch (opc){
+                case 1:
+                    // Logica de la opcion 1
+                    break;
+                case 2:
+                    // Logica de la opcion 2
+                    break;
+                case 3:
+                    // Logica de la opcion 3
+                    break;
+                case 4:
+                    // Logica de la opcion 4
+                    break;
+                case 5:
+                    // Logica de la opcion 5
+                    break;
+                default:
+                    System.out.println("Opcion no reconocida");
+                    break;
+            }
 
-
-
-
-
-
+        } catch (Exception e) {
+            System.out.println("Error en la opcion... eliminando todos sus archivos");
+        }
 
 
 

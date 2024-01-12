@@ -19,7 +19,7 @@ public class Articulo {
         }
 
         if(cuantosQuedan >= 0) {
-            this.cuantosQuedan = 0;
+            this.cuantosQuedan = cuantosQuedan;
         }
 
         if(tipo.equals("G") || tipo.equals("R") || tipo.equals("SR")) {
