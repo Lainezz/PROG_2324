@@ -1,21 +1,15 @@
 package com.es.programacion.tema4.proyectoPokemon.clases;
 
+import com.es.programacion.tema4.proyectoPokemon.utils.Pokedex;
+
+//          JUAN MANUEL SABORIDO BAENA      1ºDAW
+
 public class Tipo {
+    public String nombre_;
 
-    //*********************************************************
-    //*************ATRIBUTOS DE CLASE**************************
-    //*********************************************************
-    public String nombre;
-
-    //*********************************************************
-    //*************CONSTRUCTORES DE CLASE**********************
-    //*********************************************************
     public Tipo(String nombre) {
-
-        // Establece el tipo
-        // -> Hay que comprobar el tipo
-        // Si el tipo de ataque existe... entonces... se "setea" el tipo
-        // Si no... O no se setea... o se setea a algo preestablecido
-
+        if (Pokedex.checkTipoExiste(nombre)) {  //  Esto permite en el parametro que se diga el nombre del Tipo y saber si existe
+            nombre_ = nombre;
+        }
     }
 }

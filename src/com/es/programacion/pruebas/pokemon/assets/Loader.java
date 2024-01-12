@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class Loader {
 
-    public static BufferedImage ImagerLoader(String path) {
+    public static BufferedImage  ImagerLoader(String path) {
         try {
             URL urlPath = Loader.class.getResource(path);
             BufferedImage bi = ImageIO.read(urlPath);

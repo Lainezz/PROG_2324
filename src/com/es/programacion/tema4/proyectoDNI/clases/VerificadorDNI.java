@@ -53,7 +53,6 @@ public class VerificadorDNI {
         // Compruebo la validez de la letra
         return letrasDNI[resto] == letraDNI ? true : false;
 
-
     }// FIN COMPROBARLetraCorrecta
 
 

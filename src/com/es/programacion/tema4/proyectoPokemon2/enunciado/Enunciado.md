@@ -14,14 +14,14 @@ Cuando se declare un ganador, se mostrará un mensaje adecuado para tal efecto y
 ### Clases
 
 Todas las clases que se indican a continuación deberán contener como mínimo todos los atributos, constructores y métodos
-que se indican a continuación.
+que se indican.
 
 #### *Clase Pokemon*
 
 La clase Pokemon será la encargada de contener la abstracción de las entidades
 Pokemon. Esta tendrá los atributos que se indican a continuación.  
 
-Tendrá un constructor de clase personalizado que establecerá los atributos que se indican a continuación.
+Tendrá un constructor de clase personalizado que establecerá los atributos que se especifican.
 
 *Atributos de clase*
 ```

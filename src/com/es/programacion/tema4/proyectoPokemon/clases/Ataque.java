@@ -1,26 +1,27 @@
 package com.es.programacion.tema4.proyectoPokemon.clases;
 
+//          JUAN MANUEL SABORIDO BAENA      1ºDAW
+
 public class Ataque {
-    //*********************************************************
-    //*************ATRIBUTOS DE CLASE**************************
-    //*********************************************************
-    public String nombre;
-    public Tipo tipo;
-    public int danio;
+    public String nombre_;
+    public Tipo tipo_;
+    public int danio_;
 
     public Ataque(String nombre, Tipo tipo, int danio) {
 
-        // Establece el nombre del ataque
-        // -> No hay restricciones
+        nombre_ = nombre;
+        tipo_ = tipo;
+        danio_ = danio;
 
-        // Establece el tipo del ataque
-        // No hay que comprobar nada
-
-        // Establece el danio base del ataque
-        // -> No existen los danios negativos
-        // Si el valor es positivo.. ok
-        // Si no... se setea a 0
+        if (danio_ < 0) {
+            danio_ = 0;
+        }
 
     }
+
+    public String getAtaque() {  //  Obtiene valores de las variables de la clase controlada (Pokemon)
+        return nombre_ + " " + danio_;
+    }
+
 
 }
