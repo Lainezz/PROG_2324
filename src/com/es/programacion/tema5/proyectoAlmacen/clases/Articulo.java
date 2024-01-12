@@ -80,7 +80,15 @@ public class Articulo {
     }
 
 
+    public String getTipo() {
+        return tipo;
+    }
 
+    public void setTipo(String tipo) {
+        if(tipo.equals("G") || tipo.equals("R") || tipo.equals("SR")) {
+            this.tipo = tipo;
+        }
+    }
 
     public String getNombre() {
         return nombre;

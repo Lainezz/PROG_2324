@@ -184,22 +184,67 @@ public class Main {
         int opc;
         try  {
             opc = scan.nextInt();
-
+            int cont = 0;
             switch (opc){
                 case 1:
                     // Logica de la opcion 1
+                    cont = 0;
+                    for(int i=0; i<articulos.size(); i++) { // Recorro el ArrayList articulos
+                        if(articulos.get(i).getCuantosQuedan() <= 0) { // Para cada uno de los articulos, hago una condicion
+                            cont++;
+                        }
+                    }
+                    System.out.println("Hay "+cont+" sin stock");
                     break;
                 case 2:
                     // Logica de la opcion 2
+                    cont = 0;
+                    for(int i=0; i<articulos.size(); i++) { // Recorro el ArrayList articulos
+                        if(articulos.get(i).getTipo().equals("SR")) { // Para cada uno de los articulos, hago una condicion
+                            cont++;
+                        }
+                    }
+                    System.out.println("Hay "+cont+" artículos de tipo Super Reducido");
                     break;
                 case 3:
                     // Logica de la opcion 3
+                    cont = 0;
+                    for(int i=0; i<articulos.size(); i++) { // Recorro el ArrayList articulos
+                        if(articulos.get(i).getPrecio() <=100) { // Para cada uno de los articulos, hago una condicion
+                            cont++;
+                        }
+                    }
+                    System.out.println("Hay "+cont+" artículos con un precio menor que 100€");
                     break;
                 case 4:
                     // Logica de la opcion 4
+                    if (articulos.size()>0) {
+                        Articulo mayor = articulos.get(0);
+                        for(int i=0; i<articulos.size(); i++) { // Recorro el ArrayList articulos
+                            if(articulos.get(i).getPrecio() > mayor.getPrecio()) { // Para cada uno de los articulos, hago una condicion
+                                mayor = articulos.get(i);
+                            }
+                        }
+                        System.out.println("El producto con un precio mayor es: "+mayor.getNombre()+" con un precio de "+mayor.getPrecio()+"€");
+                    } else {
+                        System.out.println("No hay artículos para comparar");
+                    }
+
+
                     break;
                 case 5:
                     // Logica de la opcion 5
+                    if (articulos.size()>0) {
+                        Articulo menor = articulos.get(0);
+                        for(int i=0; i<articulos.size(); i++) { // Recorro el ArrayList articulos
+                            if(articulos.get(i).getPrecio() < menor.getPrecio()) { // Para cada uno de los articulos, hago una condicion
+                                menor = articulos.get(i);
+                            }
+                        }
+                        System.out.println("El producto con un precio menor es: "+menor.getNombre()+" con un precio de "+menor.getPrecio()+"€");
+                    } else {
+                        System.out.println("No hay artículos para comparar");
+                    }
                     break;
                 default:
                     System.out.println("Opcion no reconocida");
