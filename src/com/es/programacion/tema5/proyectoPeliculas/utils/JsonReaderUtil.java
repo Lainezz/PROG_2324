@@ -1,5 +1,6 @@
 package com.es.programacion.tema5.proyectoPeliculas.utils;
 
+
 import com.es.programacion.tema5.proyectoPeliculas.clases.Pelicula;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -12,7 +13,6 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
 
 public class JsonReaderUtil {
 
@@ -43,4 +43,5 @@ public class JsonReaderUtil {
             return null;
         }
     }
+
 }

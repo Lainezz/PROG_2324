@@ -2,6 +2,9 @@ package com.es.programacion.tema5.proyectoPeliculas.clases;
 
 public class Pelicula {
 
+    /**
+     * id de la pelicula
+     */
     private String id;
     private String rank;
     private String title;
