@@ -41,8 +41,8 @@ for(int i=0; i< peliculas.size(); i++) {
     sout(peliculas.getTitle()); // Esto imprimirá por pantalla cada uno de los títulos de las películas que tenemos 
 }
 ```
-1ª Parte de la clase
-Mejorar el acceso a los atributos de clase
+1ª Parte de la clase  
+Mejorar el acceso a los atributos de clase  
 A la hora de acceder a los atributos de clase, ya sabemos que tenemos que aplicar el principio de la
 ocultación de la información. Por ahora, lo estamos dejando sencillo, es decir, no estamos controlando
 los valores que se pueden establecer para nuestros atributos de clase. Vamos a pensar qué restricciones
