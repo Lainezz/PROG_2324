@@ -21,17 +21,16 @@ public class PeliculasService {
         try {
             System.out.print("Dime el anio de publicación de la pelicula: ");
             anio = scan.nextInt();
+            scan.nextLine();
         } catch (InputMismatchException e) {
             System.out.println("Anio erroneo...");
         }
 
         System.out.print("Dime el nombre del director/a: ");
         String dir = scan.nextLine();
-        scan.nextLine();
 
         System.out.print("Dime el nombre del/a actor/actriz 1: ");
         String act1 = scan.nextLine();
-
 
         System.out.print("Dime el nombre del/a actor/actriz 2: ");
         String act2 = scan.nextLine();
@@ -42,6 +41,7 @@ public class PeliculasService {
         try {
             System.out.print("Dime la nota de la pelicula: ");
             nota = scan.nextDouble();
+            scan.nextLine();
         } catch (InputMismatchException e) {
             System.out.println("Nota erronea...");
         }
