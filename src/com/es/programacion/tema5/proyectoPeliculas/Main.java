@@ -3,6 +3,7 @@ package com.es.programacion.tema5.proyectoPeliculas;
 import com.es.programacion.tema5.proyectoPeliculas.clases.Pelicula;
 import com.es.programacion.tema5.proyectoPeliculas.utils.JsonReaderUtil;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Main {
 
@@ -82,9 +83,8 @@ public class Main {
 
         // Buscar las películas protagonizadas por Robin Williams
 
-
-
-
+        // Generamos un id aleatorio usando la clase UUID
+        String id = UUID.randomUUID().toString();
 
 
 

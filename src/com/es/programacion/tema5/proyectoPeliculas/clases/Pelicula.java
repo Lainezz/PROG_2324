@@ -20,6 +20,7 @@ public class Pelicula {
     }
 
     public void setId(String id) {
+
         this.id = id;
     }
 
@@ -37,14 +38,18 @@ public class Pelicula {
 
     public void setTitle(String title) {
         this.title = title;
+        setFullTitle();
     }
 
     public String getFullTitle() {
         return fullTitle;
     }
 
-    public void setFullTitle(String fullTitle) {
-        this.fullTitle = fullTitle;
+    private void setFullTitle() {
+
+        if (this.year.length() > 0) {
+            this.fullTitle = this.title + " ("+this.year+")";
+        }
     }
 
     public String getYear() {
@@ -52,7 +57,17 @@ public class Pelicula {
     }
 
     public void setYear(String year) {
-        this.year = year;
+
+        try {
+            if(Integer.parseInt(year) > 0){
+                this.year = year;
+            }
+
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            this.year = "1900";
+        }
+
     }
 
     public String getImage() {
@@ -67,8 +82,9 @@ public class Pelicula {
         return crew;
     }
 
-    public void setCrew(String crew) {
-        this.crew = crew;
+    public void setCrew(String director, String actor1, String actor2) {
+
+        this.crew = director + " (dir.), "+actor1+", "+actor2;
     }
 
     public String getImDbRating() {
@@ -76,7 +92,17 @@ public class Pelicula {
     }
 
     public void setImDbRating(String imDbRating) {
-        this.imDbRating = imDbRating;
+        try {
+
+            if(Double.parseDouble(imDbRating) > 0.0) {
+                this.imDbRating = imDbRating;
+            }
+
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            this.imDbRating = "0.0";
+        }
+
     }
 
     public String getImdBRatingCount() {

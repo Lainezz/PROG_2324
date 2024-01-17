@@ -41,6 +41,32 @@ for(int i=0; i< peliculas.size(); i++) {
     sout(peliculas.getTitle()); // Esto imprimirá por pantalla cada uno de los títulos de las películas que tenemos 
 }
 ```
+1ª Parte de la clase
+Mejorar el acceso a los atributos de clase
+A la hora de acceder a los atributos de clase, ya sabemos que tenemos que aplicar el principio de la
+ocultación de la información. Por ahora, lo estamos dejando sencillo, es decir, no estamos controlando
+los valores que se pueden establecer para nuestros atributos de clase. Vamos a pensar qué restricciones
+podemos aplicar a los atributos de la clase Película, e implementamos la lógica pertinente.
+- El fullTitle -> Se compone simplemente del titulo junto con el anio de la peli
+- El year -> Debemos cerciorarnos de que el anio es positivo y además de que es un número
+- El crew -> Se compone del director seguido de (dir.) y del nombre de los dos actores/actrices principales
+- El imdbRating -> Es una nota de tipo double (separada por un punto). Cerciorarnos de que es mayor que 0.0
+
+2ª Parte de la clase
+CRUD de Peliculas
+
+¿Qué es un CRUD?
+CRUD son las siglas de Create (Crear) Read (Leer) Update (Actualizar) Delete (Eliminar).
+Hacer un CRUD es simplemente implementar una serie de funcionalidades para conseguir cada una
+de las siglas.
+Cada aplicación tiene sus reglas propias en cuanto a la actualización o modificación de los registros
+de la base de datos.
+Vamos a implementar las funcionalidades relativas a un CRUD simple:
+C -> Crear un registro nuevo
+R -> Obtener un registro concreto por título de película
+U -> Actualizar un registro concreto por título de película
+D -> Eliminar un registro concreto por título de película
+
 
 Realiza un menú con las siguientes opciones:
 
