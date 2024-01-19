@@ -70,20 +70,17 @@ D -> Eliminar un registro concreto por título de película
 
 Realiza un menú con las siguientes opciones:
 
-1. Imprimir las películas de una década dada por teclado
-   - Mostrar el título completo, nota, reparto y posición en la lista de todas las películas de dicha década.
-   - Si no encuentra ninguna película con los parámetros indicados mostrará un mensaje adecuado indicándolo.
-2. Opción para incorporar una nueva película en el ArrayList\<Pelicula>.
+1. Opción para incorporar una nueva película en el ArrayList\<Pelicula>.
    - El programa pedirá el título, el anio y la puntuación.
    - También pedirá el director y los dos actores/actrices principales de la película (recuerda seguir el formato correcto a la hora de establecer los datos)
    - Por último, la película se incorporará en la posición correcta de la lista según su nota
-3. Opción para eliminar una película de la lista (por posición en la lista)
+2. Opción para eliminar una película de la lista (por posición en la lista)
    - El programa pedirá la posición de la lista que se quiere eliminar
    - Es imprescindible mostrar un mensaje de error si se introduce una posición que está fuera del rango de películas existentes.
-4. Opción para eliminar una película de la lista (por nombre de la película)
+3. Opción para eliminar una película de la lista (por nombre de la película)
    - El programa pedirá el nombre de la película y procederá a eliminar dicha película de la lista
    - Si no encuentra la película deberá mostrar un mensaje indicándolo.
-5. Opción para cambiar los datos de una película de la lista.
+4. Opción para cambiar los datos de una película de la lista.
    - El programa pedirá el nombre de la película a modificar y seguidamente mostrará todos los datos de la misma.
    - Una vez se vean los datos, se pedirán los nuevos datos relativos a:
      - Título

@@ -18,9 +18,7 @@ public class MainCreacion {
         PeliculasService.addPelicula();
 
 
-        for (int i=0; i<peliculas.size(); i++) {
-            System.out.println("\t- "+peliculas.get(i).getFullTitle());
-        }
+
 
 
 
