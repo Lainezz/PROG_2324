@@ -19,9 +19,7 @@ public class MainCreacion {
         /*
         Es hacer un menú para dar la opción de crear un nuevo registro
          */
-
         Scanner scan = new Scanner(System.in);
-
 
         try {
             int opc = 1;
@@ -42,8 +40,10 @@ public class MainCreacion {
                 switch (opc) {
 
                     case 1:
+                        PeliculasService.addPelicula();
                         break;
                     case 2:
+                        PeliculasService.mostrarPeliculasDesc();
                         break;
                     case 3:
                         break;

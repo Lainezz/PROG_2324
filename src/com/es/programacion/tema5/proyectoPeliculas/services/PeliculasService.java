@@ -63,7 +63,30 @@ public class PeliculasService {
         }
 
         if(!peliExiste){
-            MainCreacion.peliculas.add(peliNueva);
+            // Vamos a comprobar la posición en la que tenemos que meter la peli
+            for (int i=0; i<MainCreacion.peliculas.size(); i++) {
+
+                double notaPelinueva = Double.parseDouble(peliNueva.getImDbRating());
+                double notaPeliLista = Double.parseDouble(MainCreacion.peliculas.get(i).getImDbRating());
+
+
+                if(notaPelinueva > notaPeliLista) {
+                    // Insertamos la peliNueva en la posición de la pelicula de la lista
+                    peliNueva.setRank(MainCreacion.peliculas.get(i).getRank());
+                    MainCreacion.peliculas.add(i, peliNueva);
+
+                    for (int j=i+1; j<MainCreacion.peliculas.size(); j++) {
+
+                        int rankingAntiguo = Integer.parseInt(MainCreacion.peliculas.get(j).getRank());
+                        int rankingNuevo = rankingAntiguo + 1;
+                        MainCreacion.peliculas.get(j).setRank(rankingNuevo+"");
+
+                    }
+
+                    break;
+                }
+
+            }
             System.out.println("Pelicula correctamente anadida...");
             return true;
         }
@@ -72,6 +95,21 @@ public class PeliculasService {
 
         return false;
     }
+
+
+    public static void mostrarPeliculasDesc() {
+
+        for (int i=0; i<MainCreacion.peliculas.size(); i++){
+
+            System.out.printf("----(%s)---------\n", MainCreacion.peliculas.get(i).getRank());
+            System.out.printf("- Titulo (año): %s\n", MainCreacion.peliculas.get(i).getFullTitle());
+            System.out.printf("\t* Nota: %s\n", MainCreacion.peliculas.get(i).getImDbRating());
+            System.out.printf("\t* Reparto: %s\n", MainCreacion.peliculas.get(i).getCrew());
+
+        }
+
+    }
+
 
 
 }
