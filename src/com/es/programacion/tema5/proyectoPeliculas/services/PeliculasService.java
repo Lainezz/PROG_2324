@@ -80,19 +80,13 @@ public class PeliculasService {
                         int rankingAntiguo = Integer.parseInt(MainCreacion.peliculas.get(j).getRank());
                         int rankingNuevo = rankingAntiguo + 1;
                         MainCreacion.peliculas.get(j).setRank(rankingNuevo+"");
-
                     }
-
                     break;
                 }
-
             }
             System.out.println("Pelicula correctamente anadida...");
             return true;
         }
-
-
-
         return false;
     }
 
