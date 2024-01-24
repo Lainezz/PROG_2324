@@ -5,10 +5,14 @@ Persona
 - email
 - telefono
 - direccion	-> tipo Direccion
+
+
 Localidad
 - municipio
 - provincia
 - cp
+
+
 Direccion
 - calle
 - numero
