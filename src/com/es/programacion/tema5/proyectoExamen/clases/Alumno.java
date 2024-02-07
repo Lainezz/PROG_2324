@@ -72,7 +72,7 @@ public class Alumno {
 
         // Recorrer el arraylist de módulos
         boolean moduloRepetido=false;
-        for (int i=0; i<= modulos.size(); i++) {
+        for (int i=0; i< modulos.size(); i++) {
             if(modulos.get(i).getNombre().equalsIgnoreCase(mod.getNombre())) {
                 moduloRepetido=true;
                 break;

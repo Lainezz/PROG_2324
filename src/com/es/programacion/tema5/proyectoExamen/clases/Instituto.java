@@ -31,7 +31,7 @@ public class Instituto {
     public void anadirAlumno(Alumno al) {
         // Recorrer el arraylist de alumnos
         boolean alumnoRepetido=false;
-        for (int i=0; i<= alumnos.size(); i++) {
+        for (int i=0; i< alumnos.size(); i++) {
             if(alumnos.get(i).getDni().equalsIgnoreCase(al.getDni())) {
                 alumnoRepetido=true;
                 break;
@@ -47,7 +47,7 @@ public class Instituto {
 
     public Alumno buscarAlumno(String dni) {
         Alumno alumnoEncontrado = null;
-        for (int i=0; i<= alumnos.size(); i++) {
+        for (int i=0; i< alumnos.size(); i++) {
             if(alumnos.get(i).getDni().equalsIgnoreCase(dni)) {
                 alumnoEncontrado = alumnos.get(i);
                 break;
@@ -58,7 +58,7 @@ public class Instituto {
 
     public boolean bajaAlumno(String dni) {
         boolean alumnoEliminado=false;
-        for (int i=0; i<= alumnos.size(); i++) {
+        for (int i=0; i< alumnos.size(); i++) {
             if(alumnos.get(i).getDni().equalsIgnoreCase(dni)) {
                 alumnos.remove(i);
                 alumnoEliminado = true;

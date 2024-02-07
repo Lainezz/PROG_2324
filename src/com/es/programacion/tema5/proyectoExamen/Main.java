@@ -112,9 +112,6 @@ public class Main {
                     System.out.println("Opcion incorrecta");
                     break;
             }
-
         }
-
-
     }
 }
