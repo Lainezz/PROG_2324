@@ -7,14 +7,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /*
-        protected double radioEcuatorial;
-        protected double rotacion;
-        protected long masa;
-        protected double temperaturaMedia;
-        protected String nombre;
-         */
-
         Planeta tierra = new Planeta(
             6738.4,23.56, 5975, 17.18, "Tierra",
                 150000000, 365.04, true);
@@ -26,6 +18,19 @@ public class Main {
 
         tierra.muestra();
         luna.muestra();
+
+        if (tierra.esMayor(luna)) {
+            System.out.println("La tierra es mayor");
+        } else {
+            System.out.println("La luna es mayor");
+        }
+
+
+        // CREAD EL PLANETA JUPITER Y EL SATELITE EUROPA
+
+        // COMPARAD JUPITER CON LA TIERRA, Y EUROPA CON LA LUNA
+
+
 
 
     }

@@ -23,4 +23,10 @@ public class Astro {
         System.out.println("Y una temperatura de: "+this.temperaturaMedia);
 
     }
+
+    public boolean esMayor(Astro a) {
+        return this.radioEcuatorial > a.radioEcuatorial;
+    }
+
+
 }
