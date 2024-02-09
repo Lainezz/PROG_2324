@@ -10,4 +10,12 @@ public class Satelite extends Astro {
         this.distanciaPlaneta = distanciaPlaneta;
         this.orbitaPlanetaria = orbitaPlanetaria;
     }
+
+    @Override
+    public void muestra() {
+        System.out.println("Nombre del satelite: "+this.nombre);
+        System.out.println("Con un radio de: "+ this.radioEcuatorial);
+        System.out.println("Una temperatura de: "+this.temperaturaMedia);
+        System.out.println("Y tarda en darle la vuelta al planeta: "+this.orbitaPlanetaria);
+    }
 }
