@@ -1,4 +1,4 @@
-package com.es.programacion.tema6.proyectoHerencia;
+package com.es.programacion.tema6.proyectoHerencia.clases;
 
 public class PersonaH {
 
