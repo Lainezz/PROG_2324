@@ -14,14 +14,6 @@ public class Loro extends Ave {
 
 
     @Override
-    public void muestra() {
-        super.muestra();
-
-        System.out.println("Soy de "+this.origen);
-    }
-
-
-    @Override
     public void volar() {
 
         if(this.vuela) {
