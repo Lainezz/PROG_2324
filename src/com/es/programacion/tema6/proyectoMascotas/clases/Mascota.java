@@ -10,6 +10,24 @@ public class Mascota {
     protected LocalDate fechaNac;
 
 
+    public void muestra() {
+
+        if(this.estado == true){
+            System.out.println("Hola mi nombre es "+this.nombre+" y tengo "+this.edad+" anios");
+
+            if(fechaNac.getMonthValue() == LocalDate.now().getMonthValue()
+                    &&
+            fechaNac.getDayOfMonth() == LocalDate.now().getDayOfMonth()) {
+                System.out.printf("Y es mi cumpleaños!!!");
+            }
+        } else {
+            System.out.printf("Las mascotas fallecidas no hablan...");
+        }
+
+    }
+
+
+
     public String getNombre() {
         return nombre;
     }
