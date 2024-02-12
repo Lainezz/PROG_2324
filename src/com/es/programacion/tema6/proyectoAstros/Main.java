@@ -3,6 +3,8 @@ package com.es.programacion.tema6.proyectoAstros;
 import com.es.programacion.tema6.proyectoAstros.clases.Planeta;
 import com.es.programacion.tema6.proyectoAstros.clases.Satelite;
 
+import java.time.LocalDate;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -29,6 +31,13 @@ public class Main {
         // CREAD EL PLANETA JUPITER Y EL SATELITE EUROPA
 
         // COMPARAD JUPITER CON LA TIERRA, Y EUROPA CON LA LUNA
+
+
+        LocalDate fechaNac = LocalDate.of(1989, 12, 19);
+
+        if(fechaNac.getDayOfMonth() == LocalDate.now().getDayOfMonth() && fechaNac.getMonthValue() == LocalDate.now().getMonthValue()) {
+            System.out.println("Hoy es tu cumpleaños");
+        }
 
 
 
