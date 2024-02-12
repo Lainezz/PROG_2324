@@ -6,6 +6,13 @@ public class Gato extends Mascota {
     private boolean peloLargo;
 
 
+    @Override
+    public void muestra(){
+
+        System.out.println("Miau...");
+
+    }
+
     public String getColor() {
         return color;
     }

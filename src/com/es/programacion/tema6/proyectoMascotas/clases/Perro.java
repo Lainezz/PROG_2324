@@ -6,6 +6,20 @@ public class Perro extends Mascota {
     private boolean pulgas;
 
 
+    @Override
+    public void muestra() {
+
+        super.muestra();
+
+        System.out.print("Soy un perro de raza "+this.raza+" y ");
+        if(this.pulgas) {
+            System.out.println("tengo pulgas.");
+        } else {
+            System.out.println("no tengo pulgas.");
+        }
+    }
+
+
     public String getRaza() {
         return raza;
     }
