@@ -26,4 +26,22 @@ public class Inventario {
 
     }
 
+    public boolean eliminarMascota(String nombre) {
+
+        boolean mascotaEliminada = false;
+        for (int i=0; i<mascotas.size(); i++) {
+
+            // Comparamos el nombre de la mascota del arraylist con el nombre que nos
+            // viene por parámetros
+            if(mascotas.get(i).nombre.equalsIgnoreCase(nombre)) {
+                // Si encontramos ese nombre, eliminamos el objeto de la posicion i
+                mascotas.remove(i);
+                mascotaEliminada = true;
+                break;
+            }
+        }
+        return mascotaEliminada;
+    }
+
+
 }

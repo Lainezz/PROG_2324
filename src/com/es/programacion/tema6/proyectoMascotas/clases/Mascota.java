@@ -28,7 +28,7 @@ public class Mascota {
             if(fechaNac.getMonthValue() == LocalDate.now().getMonthValue()
                     &&
             fechaNac.getDayOfMonth() == LocalDate.now().getDayOfMonth()) {
-                System.out.printf("Y es mi cumpleaños!!!");
+                System.out.printf("Y es mi cumpleaños!!!\n");
             }
         } else {
             System.out.printf("Las mascotas fallecidas no hablan...");

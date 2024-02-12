@@ -24,6 +24,12 @@ public class Main {
 
         invent.mostrarDatosAnimales();
 
+        invent.eliminarMascota("pulga");
+
+        System.out.println();
+
+        invent.mostrarDatosAnimales();
+
 
     }
 
