@@ -5,6 +5,13 @@ public class Canario extends Ave {
     private String color;
     private boolean canta;
 
+    public Canario(String nombre, String pico, boolean vuela, String color) {
+        super(nombre, pico, vuela);
+
+        this.color = color;
+        this.canta = true;
+    }
+
 
     @Override
     public void muestra() {

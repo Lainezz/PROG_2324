@@ -9,6 +9,16 @@ public class Mascota {
     protected boolean estado;
     protected LocalDate fechaNac;
 
+    public Mascota(String nombre) {
+
+        this.nombre = nombre;
+
+        this.edad = 0;
+        this.estado = true;
+        this.fechaNac = LocalDate.now();
+
+    }
+
 
     public void muestra() {
 

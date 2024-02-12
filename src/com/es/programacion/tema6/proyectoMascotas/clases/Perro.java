@@ -5,6 +5,13 @@ public class Perro extends Mascota {
     private String raza;
     private boolean pulgas;
 
+    public Perro(String nombre, String raza, boolean pulgas) {
+        super(nombre);
+
+        this.raza = raza;
+        this.pulgas = pulgas;
+    }
+
 
     @Override
     public void muestra() {

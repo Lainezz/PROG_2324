@@ -5,6 +5,13 @@ public class Loro extends Ave {
     private String origen;
     private boolean habla;
 
+    public Loro(String nombre, String pico, boolean vuela, String origen) {
+        super(nombre, pico, vuela);
+
+        this.origen = origen;
+        this.habla = true;
+    }
+
 
     @Override
     public void muestra() {

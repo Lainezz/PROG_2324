@@ -5,6 +5,13 @@ public class Gato extends Mascota {
     private String color;
     private boolean peloLargo;
 
+    public Gato(String nombre, String color, boolean peloLargo) {
+        super(nombre);
+
+        this.color = color;
+        this.peloLargo = peloLargo;
+    }
+
 
     @Override
     public void muestra(){
