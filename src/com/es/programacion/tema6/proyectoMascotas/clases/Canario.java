@@ -5,6 +5,24 @@ public class Canario extends Ave {
     private String color;
     private boolean canta;
 
+
+    @Override
+    public void muestra() {
+        super.muestra();
+
+        System.out.println("Soy de color "+this.color);
+    }
+
+
+    @Override
+    public void volar() {
+        if(this.vuela) {
+            System.out.println("Vuelo en mi pequeña jaula de 20 cms cuadrados");
+        } else {
+            System.out.println("Camino...");
+        }
+    }
+
     public String getColor() {
         return color;
     }

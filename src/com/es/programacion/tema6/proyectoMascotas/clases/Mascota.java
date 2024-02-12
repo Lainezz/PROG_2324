@@ -27,11 +27,17 @@ public class Mascota {
     }
 
     public void cumpleAnios() {
-
         if(fechaNac.getMonthValue() == LocalDate.now().getMonthValue() && fechaNac.getDayOfMonth() == LocalDate.now().getDayOfMonth()) {
             this.edad++;
         }
+    }
 
+    public void morir() {
+        this.estado = !this.estado;
+    }
+
+    public boolean habla() {
+        return false;
     }
 
 

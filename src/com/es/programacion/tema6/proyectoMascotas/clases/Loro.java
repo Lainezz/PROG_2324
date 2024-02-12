@@ -5,6 +5,26 @@ public class Loro extends Ave {
     private String origen;
     private boolean habla;
 
+
+    @Override
+    public void muestra() {
+        super.muestra();
+
+        System.out.println("Soy de "+this.origen);
+    }
+
+
+    @Override
+    public void volar() {
+
+        if(this.vuela) {
+            System.out.println("Vuela vuelaaaaa!");
+        } else {
+            System.out.println("Camino...");
+        }
+
+    }
+
     public String getOrigen() {
         return origen;
     }
