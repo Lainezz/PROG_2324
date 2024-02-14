@@ -157,7 +157,8 @@ public class Main {
         if(energia <= 0) {
             historia.muertoCansancio(contador);
         } else {
-            System.out.println("Sigues viv@ por los pelos");
+            System.out.println("Terminas el día de instituto...");
+            System.out.println("Sigues viv@ por los pelos con "+energia+ " de energia");
         }
 
 
