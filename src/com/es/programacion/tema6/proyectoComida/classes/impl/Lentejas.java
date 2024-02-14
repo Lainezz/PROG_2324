@@ -13,10 +13,10 @@ public class Lentejas implements Comida {
     @Override
     public int addNutricion() {
         if(lasQuieres) {
-            System.out.println("Te doy +15 de energia y +10 de hierro");
+            System.out.println("y te dan +15 de energia y +10 de hierro");
             return 25;
         } else {
-            System.out.println("Las dejas");
+            System.out.println("pero... las dejas");
             return 0;
         }
     }
