@@ -108,7 +108,7 @@ public class HistoriaClase implements Historia {
     public void muertoCansancio(int hora) {
         try {
             Thread.sleep(1000);
-            System.out.println("Has muerto de cansancio");
+            System.out.print("Has muerto de cansancio");
             Thread.sleep(1000);
             System.out.print(" a "+hora+"ª hora");
             Thread.sleep(500);
