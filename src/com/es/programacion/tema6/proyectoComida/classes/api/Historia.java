@@ -8,5 +8,7 @@ public interface Historia {
 
     public void muertoCansancio(int hora);
 
+    public int oyente();
+
 
 }
