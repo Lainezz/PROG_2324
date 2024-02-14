@@ -264,12 +264,14 @@ public class HistoriaClase implements Historia {
         }
     }
 
-    public void muertoCansancio(int hora) {
+    public void muertoCansancio(int hora, int energia) {
         try {
             Thread.sleep(1000);
             System.out.print("Has muerto de cansancio");
             Thread.sleep(1000);
             System.out.print(" a "+hora+"ª hora");
+            Thread.sleep(1000);
+            System.out.print(" con "+energia+" de energía");
             Thread.sleep(500);
             System.out.print(".");
             Thread.sleep(500);

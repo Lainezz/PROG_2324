@@ -41,7 +41,7 @@ public class Main {
 
                 switch (opc){
                     case 1:
-                        System.out.println("Clase de programación a última hora... y toca interfaces");
+                        System.out.println("Clase de programación... y toca interfaces");
 
                         energia = energia - 30;
                         contador += 2;
@@ -159,7 +159,7 @@ public class Main {
         }
 
         if(energia <= 0) {
-            historia.muertoCansancio(contador);
+            historia.muertoCansancio(contador, energia);
         } else {
             System.out.println("Terminas el día de instituto...");
             System.out.println("Sigues viv@ por los pelos con "+energia+ " de energia");

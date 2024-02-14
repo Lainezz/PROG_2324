@@ -6,7 +6,7 @@ public interface Historia {
 
     public void queHoraEs(int hora);
 
-    public void muertoCansancio(int hora);
+    public void muertoCansancio(int hora, int contador);
 
     public int oyente();
 
