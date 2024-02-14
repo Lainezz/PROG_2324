@@ -93,7 +93,7 @@ public class Main {
                         energia += reganeta.reduceEnergia();
                         break;
                     case 2:
-                        System.out.println("Te han pillado usando windows en una clase de sistemas...");
+                        System.out.print("Te han pillado usando windows en una clase de sistemas...");
                         numRandom = r.nextInt(2);
                         if(numRandom == 1) {
                             System.out.println("Parte grave...");
