@@ -1,0 +1,43 @@
+var img;
+
+//String density = " .:c-=+*a#%@Ñ";
+const density = " .,-=+:;cba!?0123456789$W#@Ñ";
+//String density = "@MBHENR#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[]{}?j|()=~!-/<>\"^_';,:`. ";
+
+
+function setup() {
+  createCanvas(650, 650);
+  img = loadImage("pikachu_sm.jpg");
+
+}
+
+function draw() {
+
+  background(255);
+  //image(img, 0, 0, width, height);
+  img.loadPixels();
+
+
+  let w = width / img.width;
+  let h = height / img.height;
+
+  for(let x=0; x<img.width; x++){
+    for(let y=0; y<img.height; y++){
+
+      // Probando a poner una letra de las de density
+      noStroke();
+      let avg = brightness(img.pixels[x+y*img.width]);
+      fill(0);
+
+      let len = density.length();
+      let charIndex = floor(map(avg,0,255,len,0));
+
+      textSize(9);
+      textAlign(CENTER, CENTER);
+      text(density.charAt(charIndex), x*w + w*0.5, y*h + y*0.5);
+
+    }
+  }
+
+  img.updatePixels();
+}

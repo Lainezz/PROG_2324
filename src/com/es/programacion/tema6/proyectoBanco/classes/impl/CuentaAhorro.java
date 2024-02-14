@@ -1,4 +1,4 @@
-package com.es.programacion.tema6.proyectoBanco.classes;
+package com.es.programacion.tema6.proyectoBanco.classes.impl;
 
 import com.es.programacion.tema6.proyectoBanco.utils.api.GenericUtil;
 
@@ -22,7 +22,7 @@ public class CuentaAhorro extends CuentaBancaria {
             nuevoInteresAnual *= 2;
         }
 
-        double nuevoSaldo = saldo * (nuevoInteresAnual / 100);
+        double nuevoSaldo = saldo + (saldo * (nuevoInteresAnual / 100));
         this.setSaldo(nuevoSaldo);
     }
 }

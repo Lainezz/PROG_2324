@@ -1,8 +1,9 @@
-package com.es.programacion.tema6.proyectoBanco.classes;
+package com.es.programacion.tema6.proyectoBanco.classes.impl;
 
+import com.es.programacion.tema6.proyectoBanco.classes.api.Cuenta;
 import com.es.programacion.tema6.proyectoBanco.utils.api.GenericUtil;
 
-public abstract class CuentaBancaria {
+public abstract class CuentaBancaria implements Cuenta {
 
     /*
     ATRIBUTOS DE CLASE
@@ -18,7 +19,7 @@ public abstract class CuentaBancaria {
     /*
     CONSTRUCTORES DE CLASE
      */
-    public CuentaBancaria(String iban, GenericUtil util) throws IllegalArgumentException{
+    public CuentaBancaria(String iban, GenericUtil util) throws IllegalArgumentException {
         this.util = util;
         this.setIban(iban);
         this.setSaldo(0);
@@ -30,34 +31,36 @@ public abstract class CuentaBancaria {
      */
     public abstract void calcularIntereses();
 
-    public void ingresar(double cantAIngresar) throws Exception{
+    public boolean ingresar(double cantAIngresar) {
 
         if(cantAIngresar < 0) {
-            throw new Exception("La cantidad no puede ser menor a 0");
+            System.out.println("La cantidad no puede ser menor a 0");
         } else {
             anadir(Math.abs(cantAIngresar));
         }
 
+        return false;
     }
 
-    public void retirar(double cantARetirar) throws Exception {
+    public boolean retirar(double cantARetirar) {
 
         if(cantARetirar < 0) {
-            throw new Exception("La cantidad no puede ser menor a 0");
+            System.out.println("La cantidad no puede ser menor a 0");
         } else {
             double newSaldo = this.saldo - cantARetirar;
             if(newSaldo < 0) {
-                throw new Exception("La cantidad es mayor al saldo disponible");
+                System.out.println("La cantidad es mayor al saldo disponible");
             } else {
                 anadir(-cantARetirar);
             }
         }
+        return false;
     }
     private void anadir(double cantidad) {
         this.saldo += cantidad;
     }
 
-    public boolean traspasarDinero(CuentaBancaria otraCuenta, double cantidadTraspaso) {
+    public boolean transferir(CuentaBancaria otraCuenta, double cantidadTraspaso) {
 
         double saldoC1 = this.saldo;
         double saldoC2 = otraCuenta.saldo;
