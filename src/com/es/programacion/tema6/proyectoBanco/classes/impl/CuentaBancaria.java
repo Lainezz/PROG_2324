@@ -31,10 +31,10 @@ public abstract class CuentaBancaria implements Cuenta {
      */
     public abstract void calcularIntereses();
 
-    public boolean ingresar(double cantAIngresar) {
+    public boolean ingresar(double cantAIngresar) throws Exception {
 
         if(cantAIngresar < 0) {
-            System.out.println("La cantidad no puede ser menor a 0");
+            throw new Exception("La cantidad no puede ser menor a 0");
         } else {
             anadir(Math.abs(cantAIngresar));
         }
@@ -42,14 +42,14 @@ public abstract class CuentaBancaria implements Cuenta {
         return false;
     }
 
-    public boolean retirar(double cantARetirar) {
+    public boolean retirar(double cantARetirar) throws Exception {
 
         if(cantARetirar < 0) {
-            System.out.println("La cantidad no puede ser menor a 0");
+            throw new Exception("La cantidad no puede ser menor a 0");
         } else {
             double newSaldo = this.saldo - cantARetirar;
             if(newSaldo < 0) {
-                System.out.println("La cantidad es mayor al saldo disponible");
+                throw new Exception("La cantidad es mayor al saldo disponible");
             } else {
                 anadir(-cantARetirar);
             }
@@ -60,21 +60,23 @@ public abstract class CuentaBancaria implements Cuenta {
         this.saldo += cantidad;
     }
 
-    public boolean transferir(CuentaBancaria otraCuenta, double cantidadTraspaso) {
+    public boolean transferir(Cuenta otraCuenta, double cantidadTraspaso) {
+
+        CuentaBancaria cuentaDestino = (CuentaBancaria) otraCuenta;
 
         double saldoC1 = this.saldo;
-        double saldoC2 = otraCuenta.saldo;
+        double saldoC2 = cuentaDestino.saldo;
         try {
             // OPERACION CUENTA 1
             this.retirar(cantidadTraspaso);
             // OPERACION CUENTA 2
-            otraCuenta.ingresar(cantidadTraspaso);
+            cuentaDestino.ingresar(cantidadTraspaso);
 
             return true;
         } catch (Exception e) {
-            System.out.println("ERROR AL TRASPASAR");
+            e.printStackTrace();
             this.saldo = saldoC1;
-            otraCuenta.saldo = saldoC2;
+            cuentaDestino.saldo = 200;
             return false;
         }
     }
