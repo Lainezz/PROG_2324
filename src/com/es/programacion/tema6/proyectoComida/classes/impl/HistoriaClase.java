@@ -35,7 +35,7 @@ public class HistoriaClase implements Historia {
                 Thread.sleep(1000);
                 System.out.print("pero debes ir a clase");
 
-            } else if (System.getProperty("user.name").equalsIgnoreCase("Raquel")) {
+            } else if (System.getProperty("user.name").equalsIgnoreCase("Raquel") || System.getProperty("user.name").equalsIgnoreCase("rardati601")) {
                 Thread.sleep(500);
                 System.out.print(".");
                 Thread.sleep(500);
