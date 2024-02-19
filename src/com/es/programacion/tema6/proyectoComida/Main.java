@@ -164,7 +164,5 @@ public class Main {
             System.out.println("Terminas el día de instituto...");
             System.out.println("Sigues viv@ por los pelos con "+energia+ " de energia");
         }
-
-
     }
 }
