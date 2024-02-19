@@ -12,8 +12,42 @@ public class Articulo {
     // Constructores
     public Articulo(String id, String nombre, Proveedor p, double precioSinIva, int stock) {
         this.id = id;
-
+        setNombre(nombre);
+        setProveedor(p);
+        setPrecioSinIva(precioSinIva);
+        setPrecioConIva();
+        setStock(stock);
     }
+
+    // Metodos
+    @Override
+    public String toString() {
+        String cadenaAMostrar = "";
+
+        cadenaAMostrar += "Articulo con id: "+this.id+"\n";
+        cadenaAMostrar += "Nombre: "+this.nombre+ " precio: "+this.precioConIva+"€\n";
+        cadenaAMostrar += "StocK: "+this.stock;
+
+        return cadenaAMostrar;
+    }
+
+    @Override
+    public boolean equals(Object art) {
+
+        if(art instanceof Articulo) {
+            Articulo articulo = (Articulo) art;
+
+            if(this.id.equalsIgnoreCase(articulo.id)) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } else {
+            return false;
+        }
+    }
+
 
     // GETTERS AND SETTERS
     public String getId() {
