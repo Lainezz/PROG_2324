@@ -31,12 +31,32 @@ public class Main {
         // estamos añadiendo un vaper que ya existe
         // Queremos añadir vaper2
         System.out.println(articulos.get(0));
+
         for (int i=0; i<= articulos.size(); i++) {
             if(vaper2.equals(articulos.get(i))) {
-                articulos.get(i).setStock( articulos.get(i).getStock() + vaper2.getStock() );
+                articulos.get(i).setStock(vaper2.getStock());
                 break;
             }
         }
         System.out.println(articulos.get(0));
+
+        Articulo vaper3 = new Articulo("1","Vaper para sordos",p1, 5, 50);
+
+        if (articulos.contains(vaper3)){
+            articulos.get(articulos.indexOf(vaper3)).setStock(vaper3.getStock());
+        }
+
+        System.out.println(articulos.get(0));
+
+
+        // Crear 5 Articulos más.
+        // Los vais a añadir al arrayList
+        // Vais a mostrar la lista de artículos
+        // ¿La lista está ordenada?
+        // ORDENA LA LISTA... (plot twist: Se puede hacer con una sola línea)
+        // Muestra la lista de nuevo
+
+
+
     }
 }

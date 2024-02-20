@@ -93,6 +93,6 @@ public class Articulo {
     }
 
     public void setStock(int stock) {
-        this.stock = stock;
+        this.stock = this.stock + stock;
     }
 }
