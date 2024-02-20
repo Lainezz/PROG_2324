@@ -32,7 +32,6 @@ public class Proveedor {
         } else {
             return false;
         }
-
     }
 
     // Getters and setters

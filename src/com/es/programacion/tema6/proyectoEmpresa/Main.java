@@ -1,5 +1,6 @@
 package com.es.programacion.tema6.proyectoEmpresa;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class Main {
@@ -22,5 +23,20 @@ public class Main {
 
         System.out.println(p1.equals(p2));
 
+
+        ArrayList<Articulo> articulos = new ArrayList<>();
+
+        articulos.add(vaper);
+
+        // estamos añadiendo un vaper que ya existe
+        // Queremos añadir vaper2
+        System.out.println(articulos.get(0));
+        for (int i=0; i<= articulos.size(); i++) {
+            if(vaper2.equals(articulos.get(i))) {
+                articulos.get(i).setStock( articulos.get(i).getStock() + vaper2.getStock() );
+                break;
+            }
+        }
+        System.out.println(articulos.get(0));
     }
 }
