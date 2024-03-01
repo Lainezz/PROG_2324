@@ -1,6 +1,8 @@
 package com.es.programacion.tema6.proyectoEmpresa;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.UUID;
 
 public class Main {
@@ -24,7 +26,7 @@ public class Main {
         System.out.println(p1.equals(p2));
 
 
-        ArrayList<Articulo> articulos = new ArrayList<>();
+        ArrayList<Articulo> articulos = new ArrayList<Articulo>();
 
         articulos.add(vaper);
 
@@ -55,6 +57,8 @@ public class Main {
         // ¿La lista está ordenada?
         // ORDENA LA LISTA... (plot twist: Se puede hacer con una sola línea)
         // Muestra la lista de nuevo
+        Collections.sort(articulos);
+
 
 
 
