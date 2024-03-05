@@ -73,10 +73,22 @@ public class EscrituraLectura {
 
                 // 4º Operar con el fichero
                 int caracter = 0;
+                String usuario = "";
+                String pass = "";
+                String cadena = "";
                 while (caracter != -1) { // Mientras caracter sea diferente de -1... seguimos leyendo
                     caracter = fr.read(); // fr.read() devuelve un entero... EL CARACTER EN UNICODE
 
-                    System.out.print((char) caracter); // Aquí... el (char) caracter lo que hace es
+                    if(caracter != 10){
+                        cadena += (char) caracter;
+                    } else {
+                        usuario = cadena.split(":")[0];
+                        pass = cadena.split(":")[1];
+                        System.out.println("User: "+usuario);
+                        System.out.println("Pass: "+pass);
+                        cadena = "";
+                    }
+                    // System.out.print((char) caracter); // Aquí... el (char) caracter lo que hace es
                     // cambiar de número a caracter... obtiene caracter correspondiente del código UNICODE
                 }
 
