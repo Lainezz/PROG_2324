@@ -54,7 +54,7 @@ public class RutasFicheros {
                 // 1º Abrir flujo de escritura
                 FileWriter fw = null;
                 try {
-                    fw = new FileWriter(fichRelative);
+                    fw = new FileWriter(fichRelative, false);
 
                     // 2º Operar con el fichero
                     Scanner scan = new Scanner(System.in);
