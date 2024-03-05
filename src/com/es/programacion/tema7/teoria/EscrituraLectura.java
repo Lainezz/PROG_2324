@@ -1,8 +1,10 @@
 package com.es.programacion.tema7.teoria;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class EscrituraLectura {
@@ -34,7 +36,7 @@ public class EscrituraLectura {
 
                     if(!cadenaAEscribir.equalsIgnoreCase("fin")) {
                         // 4º Operar con el fichero
-                        fw.write(cadenaAEscribir);
+                        fw.write(cadenaAEscribir+"\n");
                     }
                 }
 
@@ -54,8 +56,38 @@ public class EscrituraLectura {
                     }
                 }
             }
-
         }
 
+
+        // AHORA LECTURA DE FICHERO
+        // 1º Abrir el fichero
+        File ficheroParaLeer = new File("src"+ls+"main"+ls+"resources"+ls+"archivosTema7"+ls+"fichero_prueba.txt");
+
+        // 2º Comproabar que existe
+        if(ficheroParaLeer.exists() && ficheroParaLeer.isFile() && ficheroParaLeer.canRead()) {
+
+            // 3º Abrir flujos de lectura -> Lanza IOException
+            FileReader fr = null;
+            try {
+                fr = new FileReader(ficheroParaLeer, StandardCharsets.ISO_8859_1);
+
+                // 4º Operar con el fichero
+                int caracter = 0;
+                while (caracter != -1) { // Mientras caracter sea diferente de -1... seguimos leyendo
+                    caracter = fr.read(); // fr.read() devuelve un entero... EL CARACTER EN UNICODE
+
+                    System.out.print((char) caracter); // Aquí... el (char) caracter lo que hace es
+                    // cambiar de número a caracter... obtiene caracter correspondiente del código UNICODE
+                }
+
+                // 5º Cerrar los flujos
+                fr.close();
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.out.println("Error al operar con el fichero");
+            }
+        }
     }
 }
