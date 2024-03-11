@@ -88,8 +88,7 @@ public class EscrituraLectura {
                         System.out.println("Pass: "+pass);
                         cadena = "";
                     }
-                    // System.out.print((char) caracter); // Aquí... el (char) caracter lo que hace es
-                    // cambiar de número a caracter... obtiene caracter correspondiente del código UNICODE
+                    System.out.print((char) caracter); // Aquí... el (char) caracter lo que hace es cambiar de número a caracter... obtiene caracter correspondiente del código UNICODE
                 }
 
                 // 5º Cerrar los flujos
