@@ -1,0 +1,3 @@
+¿De qué color es una naranja?:Naranja
+¿Capital de España?:Madrid
+¿Distancia al sol desde la tierra?:150000000
