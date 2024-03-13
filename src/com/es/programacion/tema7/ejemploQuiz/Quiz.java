@@ -1,6 +1,7 @@
-package com.es.programacion.tema7.proyectoQuiz;
+package com.es.programacion.tema7.ejemploQuiz;
 
 import java.io.*;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -9,7 +10,7 @@ public class Quiz {
 
     public static void main(String[] args) {
 
-        // Vamos a leer un fichero que va a contener preguntas y respuestas, separadas por :
+        // Vamos a leer un fichero que va a contener preguntas y respuestas, separadas por:
         String ls = File.separator;
         File fichero = new File("src"+ls+"main"+ls+"resources"+ls+"archivosTema7"+ls+"proyectoQuiz"+ls+"preguntas_respuestas.txt");
 
@@ -88,7 +89,7 @@ public class Quiz {
         for(int i=0; i<preguntasParaJuego.size(); i++) {
             // Almaceno temporalmente la pregunta y la respuesta que se va a hacer
             String pregunta = preguntasParaJuego.get(i);
-            String respuesta = respuestas.get(i);
+            String respuesta = respuestasParaJuego.get(i);
 
             // Formulo la pregunta
             System.out.println(pregunta);

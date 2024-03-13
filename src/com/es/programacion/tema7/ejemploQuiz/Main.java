@@ -1,4 +1,4 @@
-package com.es.programacion.tema7.proyectoQuiz;
+package com.es.programacion.tema7.ejemploQuiz;
 
 import java.io.*;
 import java.util.ArrayList;
