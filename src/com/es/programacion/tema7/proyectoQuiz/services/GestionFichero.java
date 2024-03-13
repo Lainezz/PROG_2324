@@ -1,5 +1,9 @@
 package com.es.programacion.tema7.proyectoQuiz.services;
 
+import com.es.programacion.tema7.proyectoQuiz.model.Pregunta;
+
+import java.util.ArrayList;
+
 public class GestionFichero {
 
     /*
@@ -11,5 +15,28 @@ public class GestionFichero {
 
      */
 
+
+    public ArrayList<Pregunta> leerFicheroPreguntas() {
+
+        // 0º Crear e inicializar el ArrayList que al final pasaremos a la clase Trivial
+        ArrayList<Pregunta> arrDePreguntasTemporal = new ArrayList<>();
+
+        // 1º Abrir el file (la ruta es la misma que en el ejercicio anterior)
+
+        // 2º Comprobar si el file existe, tiene modo lectura, etc.
+
+        // 3º Abrir flujos de lectura (QUEREMOS TRABAJAR CON BUFFEREDREADER)
+
+        // 4º Operar con el fichero
+        // Lo que hay que hacer es:
+            // a) Separar la línea en pregunta y respuesta (con el .split)
+            // b) Crear un objeto de tipo Pregunta
+            // c) Si el objeto se ha creado correctamente, añadirlo al ArrayList arrDePreguntasTemporal
+
+        // 5º Cerrar los flujos
+        // 6º Devolver el arrDePreguntasTemporal
+
+
+    }
 
 }

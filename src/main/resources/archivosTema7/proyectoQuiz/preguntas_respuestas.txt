@@ -2,7 +2,7 @@
 ¿Capital de España?:Madrid
 ¿Distancia al sol desde la tierra?:150000000
 ¿Cuál es el océano más grande del mundo?:Pacífico
-¿Cuál es el río más largo del mundo?:Amazonas
+¿Cuál es el río más largo del mundo?:Nilo
 ¿Cuál es el planeta más pequeño del sistema solar?:Mercurio
 ¿Es cierto que Newton se inspiró en una manzana?:Si
 ¿Sienten envidia los perros?:Si
