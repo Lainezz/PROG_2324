@@ -1,5 +1,6 @@
 package com.es.programacion.tema7.proyectoQuiz.services;
 
+import com.es.programacion.tema7.proyectoQuiz.model.Participante;
 import com.es.programacion.tema7.proyectoQuiz.model.Pregunta;
 
 import java.util.ArrayList;
@@ -35,7 +36,24 @@ public class GestionFichero {
 
         // 5º Cerrar los flujos
         // 6º Devolver el arrDePreguntasTemporal
+        return null;
 
+
+    }
+
+    public void escribirFicheroPuntuaciones(ArrayList<Participante> arrPar) {
+
+        // 1º Abrir el File (la ruta del fichero de puntuaciones)
+        // 2º Comprobar que existe y está modo escritura
+        // 3º Abrir los flujos de Escritura (con BufferedWriter)
+
+        // 4º Operar con el fichero
+            // a) Recorrer el ArrayList arrPar
+            // b) Escribir todos los registros de arrPar en el fichero
+            // El formato para escribir va a ser:
+            // id:[fecha,puntuacion;fecha,puntuacion]
+
+        // 5º Cerrar los flujos de escritura
 
     }
 
