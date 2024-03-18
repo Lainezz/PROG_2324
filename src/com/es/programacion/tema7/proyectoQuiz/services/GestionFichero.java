@@ -10,14 +10,10 @@ import java.util.ArrayList;
 public class GestionFichero {
 
     /*
-
     Va a tener 2 métodos.
     1º Va a ser para leer un fichero y volcar la información en en ArrayList de Preguntas
-
     2º Va a ser para escribir en un fichero LA INFORMACIÓN que viene desde el arrayList de participantes
-
      */
-
 
     public ArrayList<Pregunta> leerFicheroPreguntas() {
 
@@ -151,19 +147,6 @@ public class GestionFichero {
 
     public void escribirFicheroPuntuaciones(ArrayList<Participante> arrPar) {
 
-        // 1º Abrir el File (la ruta del fichero de puntuaciones)
-        // 2º Comprobar que existe y está modo escritura
-        // 3º Abrir los flujos de Escritura (con BufferedWriter)
-
-        // 4º Operar con el fichero
-            // a) Recorrer el ArrayList arrPar
-            // b) Escribir todos los registros de arrPar en el fichero
-            // El formato para escribir va a ser:
-            // id:[fecha,puntuacion;fecha,puntuacion]
-
-        // 5º Cerrar los flujos de escritura
-
-
         /*
         *******************************************************************
         1º Abrir el file
@@ -222,14 +205,14 @@ public class GestionFichero {
                     bw.write(p.getId());
                     bw.write(":");
 
-                    // Ahora escribimos en el fichero el ArrayList<Participante>
+                    // Ahora escribimos en el fichero el ArrayList<Puntuacion>
                     // ¿Cómo lo hacemos? -> Recorremos el arrayList y escribimos todos los registros
                     bw.write("["); // Primero va el simbolo [
                     for (Puntuacion punt : p.getPuntuaciones()) {
                         bw.write(punt.getFecha().toString()); // Despues va la fecha
-                        bw.write(";"); // Seguido de ;
+                        bw.write(","); // Seguido de ,
                         bw.write(punt.getPuntuacion()); // Y a su vez seguido de la puntuacion
-                        bw.write(","); // Por ultimo, para separar registros, usamos una coma
+                        bw.write(";"); // Por ultimo, para separar registros, usamos un punto y coma
                     }
                     bw.write("]"); // Cuando terminamos de escribir las puntuaciones escribimos el simbolo ]
                 }
