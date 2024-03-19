@@ -10,9 +10,12 @@ import java.util.ArrayList;
 public class GestionFichero {
 
     /*
-    Va a tener 2 métodos.
+    Va a tener 4 métodos.
     1º Va a ser para leer un fichero y volcar la información en en ArrayList de Preguntas
     2º Va a ser para escribir en un fichero LA INFORMACIÓN que viene desde el arrayList de participantes
+
+    3º Otro método para leerFicheroPuntuaciones(): ArrayList<Participante>
+    4º Un último método para escribirFicheroPreguntas(arrPreg: ArrayList<Pregunta>)
      */
 
     public ArrayList<Pregunta> leerFicheroPreguntas() {
@@ -71,7 +74,7 @@ public class GestionFichero {
 
                 // b) Ya tenemos en mente cómo vamos a hacerlo, ahora debemos leer
                 // cada una de las líneas del fichero. Esto lo hacemos con el método .readLine().
-                // Primero leemos la PRIMERA LÍNEA.
+                // Primero leemos la PRIMERA LiNEA.
                 String lineaDelFichero = br.readLine();
                 while (lineaDelFichero != null) { // Este bucle sirve para leer una a una todas las líneas del fichero
 

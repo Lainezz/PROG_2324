@@ -5,12 +5,14 @@ import com.es.programacion.tema7.proyectoQuiz.model.Pregunta;
 import com.es.programacion.tema7.proyectoQuiz.model.Puntuacion;
 import com.es.programacion.tema7.proyectoQuiz.services.GestionFichero;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Trivial {
 
     public static void main(String[] args) {
+
 
         ArrayList<Participante> arrParticipantes = new ArrayList<>();
         ArrayList<Pregunta> preguntasParaJuego = new ArrayList<>();
