@@ -1,7 +1,5 @@
 package com.es.programacion.tema7.proyectoAirbnb.model;
 
-import org.jetbrains.annotations.NotNull;
-
 public class Alojamiento implements Comparable<Alojamiento>{
 
     private String id;
@@ -70,7 +68,7 @@ public class Alojamiento implements Comparable<Alojamiento>{
     }
 
     @Override
-    public int compareTo(@NotNull Alojamiento o) {
+    public int compareTo(Alojamiento o) {
         if(this.getPrecio() > o.getPrecio()) {
             return 1;
         } else if (this.getPrecio() < o.getPrecio()){
