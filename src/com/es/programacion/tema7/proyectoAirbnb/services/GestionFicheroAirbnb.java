@@ -17,22 +17,34 @@ public class GestionFicheroAirbnb {
     y otro para escribir esa informacion en otro fichero aparte
      */
 
+    /**
+     * Método leerFicheroAlojamientos
+     * @param ruta
+     * @return
+     */
     public ArrayList<Alojamiento> leerFicheroAlojamientos(String ruta) {
 
         ArrayList<Alojamiento> alojamientosTemporal = new ArrayList<>();
 
+        // Al haber pasado la ruta por parámetros, podemos usar varios ficheros (malaga.csv o sevilla.csv)
         System.out.println("RUTA: " + ruta);
+
+        // 1º Abrimos el fichero
         File fichero = new File(ruta);
 
+        // 2º Comprobamos que existe
         if (fichero.exists()) {
 
             FileReader fr = null;
             BufferedReader br = null;
 
             try {
+                // 3º Abrimos los flujos de escritura
                 fr = new FileReader(fichero);
                 br = new BufferedReader(fr);
 
+
+                // 4º 0peramos con el fichero
                 String linea = br.readLine();
                 int i = 0;
                 while (linea != null) {
@@ -40,6 +52,7 @@ public class GestionFicheroAirbnb {
                         i++;
                     } else {
 
+                        // Variables auxiliares
                         String id = "";
                         String name = "";
                         String host_id = "";
@@ -67,10 +80,7 @@ public class GestionFicheroAirbnb {
                         alojamientosTemporal.add(a);
 
                     }
-
                     linea = br.readLine();
-
-
                 }
 
             } catch (IOException e) {
