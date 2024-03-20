@@ -39,7 +39,7 @@ public class GestionFicheroAirbnb {
             BufferedReader br = null;
 
             try {
-                // 3º Abrimos los flujos de escritura
+                // 3º Abrimos los flujos de escrtura
                 fr = new FileReader(fichero);
                 br = new BufferedReader(fr);
 
@@ -83,12 +83,13 @@ public class GestionFicheroAirbnb {
                     linea = br.readLine();
                 }
 
+                br.close();
+                fr.close();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
-
         return alojamientosTemporal;
     }
 }
