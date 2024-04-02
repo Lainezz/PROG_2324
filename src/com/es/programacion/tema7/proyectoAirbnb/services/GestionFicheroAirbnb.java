@@ -3,10 +3,7 @@ package com.es.programacion.tema7.proyectoAirbnb.services;
 import com.es.programacion.tema7.proyectoAirbnb.model.Alojamiento;
 import com.es.programacion.tema7.proyectoAirbnb.model.Propietario;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class GestionFicheroAirbnb {
@@ -33,13 +30,13 @@ public class GestionFicheroAirbnb {
         File fichero = new File(ruta);
 
         // 2º Comprobamos que existe
-        if (fichero.exists()) {
+        if (fichero.exists() && fichero.isFile() && fichero.canRead()) {
 
             FileReader fr = null;
             BufferedReader br = null;
 
             try {
-                // 3º Abrimos los flujos de escrtura
+                // 3º Abrimos los flujos de lectura
                 fr = new FileReader(fichero);
                 br = new BufferedReader(fr);
 
@@ -61,17 +58,19 @@ public class GestionFicheroAirbnb {
 
                         String[] valores = linea.split(",");
 
+
                         id = valores[0];
                         name = valores[1];
                         host_id = valores[2];
                         host_name = valores[3];
                         price = valores[9];
 
+                        // El tipo requerido
                         double price_d = 0;
                         try {
                             price_d = Double.parseDouble(price);
                         } catch (NumberFormatException e) {
-                            e.printStackTrace();
+                            //e.printStackTrace();
                         }
 
                         Propietario p = new Propietario(host_id, host_name);
@@ -92,4 +91,48 @@ public class GestionFicheroAirbnb {
         }
         return alojamientosTemporal;
     }
+
+    public void escribirFicheroDatos(ArrayList<Alojamiento> arrAlojamientos, String ruta) {
+
+        // 1º Abrimos el fichero
+        File fichero = new File(ruta);
+
+        // 2º Comprobamos que existe
+        if (fichero.exists() && fichero.isFile() && fichero.canWrite()) {
+
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+
+            try {
+                // 3º Abrimos los flujos de escritura
+                fw = new FileWriter(fichero);
+                bw = new BufferedWriter(fw);
+
+
+                // 4º 0peramos con el fichero
+                // a) Recorremos el arrayList que queremos escribir en el fichero
+                for (Alojamiento a : arrAlojamientos) {
+                    // b) escribrimos en el fichero
+                    bw.write(a.getId());
+                    bw.write(",");
+                    bw.write(a.getName());
+                    bw.write(",");
+                    bw.write(a.getPropietario().getHost_id());
+                    bw.write(",");
+                    bw.write(a.getPropietario().getHost_name());
+                    bw.write(",");
+                    bw.write(a.getPrecio()+"");
+                    bw.write("\n");
+                }
+
+                // 5º Cerrar flujos
+                bw.close();
+                fw.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }
