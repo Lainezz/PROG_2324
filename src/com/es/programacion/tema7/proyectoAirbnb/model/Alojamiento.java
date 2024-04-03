@@ -59,12 +59,9 @@ public class Alojamiento implements Comparable<Alojamiento>{
 
     @Override
     public String toString() {
-        return "Alojamiento{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", propietario=" + propietario +
-                ", precio=" + precio +
-                '}';
+        return  "Alojamiento: "+id+"\n" +
+                "precio: "+precio+"€\t- nombre: "+name+"\n" +
+                "propietario: "+propietario;
     }
 
     @Override

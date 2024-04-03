@@ -37,9 +37,6 @@ public class Propietario {
 
     @Override
     public String toString() {
-        return "Propietario{" +
-                "host_id='" + host_id + '\'' +
-                ", host_name='" + host_name + '\'' +
-                '}';
+        return host_id+": "+host_name;
     }
 }

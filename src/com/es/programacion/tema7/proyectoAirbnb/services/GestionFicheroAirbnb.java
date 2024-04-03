@@ -71,6 +71,9 @@ public class GestionFicheroAirbnb {
                             price_d = Double.parseDouble(price);
                         } catch (NumberFormatException e) {
                             //e.printStackTrace();
+                            // Una opcion que tenemos es que si se produce una excepcion, que no se agregue ese registro a los datos
+                            linea = br.readLine();
+                            continue;
                         }
 
                         Propietario p = new Propietario(host_id, host_name);

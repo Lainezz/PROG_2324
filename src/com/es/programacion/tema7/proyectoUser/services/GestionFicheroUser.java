@@ -66,7 +66,7 @@ public class GestionFicheroUser {
             BufferedWriter bw = null;
 
             try {
-                // 3º Abrimos los flujos de escritura
+                // 3º Abrimos los flujos de escritura -> Con el append a false
                 fw = new FileWriter(fichero, false);
                 bw = new BufferedWriter(fw);
 
@@ -102,7 +102,7 @@ public class GestionFicheroUser {
             BufferedWriter bw = null;
 
             try {
-                // 3º Abrimos los flujos de escritura
+                // 3º Abrimos los flujos de escritura -> Append a true
                 fw = new FileWriter(fichero, true);
                 bw = new BufferedWriter(fw);
 
