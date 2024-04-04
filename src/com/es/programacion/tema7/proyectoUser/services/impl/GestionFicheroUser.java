@@ -1,14 +1,14 @@
-package com.es.programacion.tema7.proyectoUser.services;
+package com.es.programacion.tema7.proyectoUser.services.impl;
 
-import com.es.programacion.tema7.proyectoAirbnb.model.Alojamiento;
 import com.es.programacion.tema7.proyectoUser.model.User;
+import com.es.programacion.tema7.proyectoUser.services.api.GestionFichero;
 
 import java.io.*;
 import java.util.ArrayList;
 
-public class GestionFicheroUser {
+public class GestionFicheroUser implements GestionFichero<User> {
 
-    public ArrayList<User> leerFicheroUsers(String ruta) {
+    public ArrayList<User> leerFichero(String ruta) {
 
         ArrayList<User> arrUserTemporal = new ArrayList<>();
 
@@ -54,7 +54,7 @@ public class GestionFicheroUser {
         return arrUserTemporal;
     }
 
-    public void modificarFicheroUsers(ArrayList<User> users, String ruta) {
+    public void modificarFichero(ArrayList<User> users, String ruta) {
 
         // 1º Abrimos el fichero
         File fichero = new File(ruta);
@@ -91,7 +91,7 @@ public class GestionFicheroUser {
 
     }
 
-    public void anadirFicheroUsers(User u, String ruta) {
+    public void anadirFichero(User user, String ruta) {
         // 1º Abrimos el fichero
         File fichero = new File(ruta);
 
@@ -108,8 +108,8 @@ public class GestionFicheroUser {
 
 
                 // 4º 0peramos con el fichero
-                bw.write(u.getId()+":"+u.getName()+":"+u.getPass()+":");
-                bw.write(u.isAdmin()+"");
+                bw.write(user.getId()+":"+user.getName()+":"+user.getPass()+":");
+                bw.write(user.isAdmin()+"");
                 bw.write("\n");
 
 
