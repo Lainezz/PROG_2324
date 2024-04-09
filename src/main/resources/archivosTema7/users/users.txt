@@ -1,0 +1,3 @@
+alvariko2005:alvaro:1234567890:false
+lainezzz:diego:234567890:true
+moreniko6969:juan:abc:false

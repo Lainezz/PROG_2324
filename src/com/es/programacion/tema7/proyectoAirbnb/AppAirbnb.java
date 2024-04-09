@@ -40,7 +40,6 @@ public class AppAirbnb {
                     """);
 
             opc = scan.nextLine();
-
             switch (opc) {
 
                 case "1":
