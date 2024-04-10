@@ -75,6 +75,7 @@ public class ServiceUser implements BasicServiceUser {
         String idUsuario = "";
         String passwordUsuario = "";
 
+
         System.out.print("Introduzca su idUsuario: ");
         idUsuario = scan.nextLine();
 
