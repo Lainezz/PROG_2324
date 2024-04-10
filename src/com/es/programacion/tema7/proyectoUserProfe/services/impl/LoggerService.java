@@ -1,25 +1,23 @@
 package com.es.programacion.tema7.proyectoUserProfe.services.impl;
 
 import com.es.programacion.tema7.proyectoUserProfe.model.Logger;
-import com.es.programacion.tema7.proyectoUserProfe.services.api.GestionFicheroAPI;
+import com.es.programacion.tema7.proyectoUserProfe.services.api.ServiceAPI;
 
-import java.util.ArrayList;
-
-public class LoggerService implements GestionFicheroAPI<Logger> {
+public class LoggerService implements ServiceAPI<Logger> {
 
 
     @Override
-    public ArrayList<Logger> leerFichero(String ruta) {
+    public Logger find(String id) {
         return null;
     }
 
     @Override
-    public void modificarFichero(ArrayList<Logger> objs, String ruta) {
-
+    public boolean exists(String id) {
+        return false;
     }
 
     @Override
-    public void anadirFichero(Logger obj, String ruta) {
-
+    public boolean alta(Logger newObj) {
+        return false;
     }
 }

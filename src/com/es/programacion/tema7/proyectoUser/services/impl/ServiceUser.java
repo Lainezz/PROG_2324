@@ -21,7 +21,51 @@ public class ServiceUser implements BasicServiceUser {
     @Override
     public boolean altaUsuario() {
 
-        return false;
+        Scanner scan = new Scanner(System.in);
+        String idUsuario = "";
+        String nombreUsuario = "";
+        String passwordUsuario = "";
+        String isAdminSt = "";
+        boolean isAdmin = false;
+
+        System.out.print("Introduzca su idUsuario: ");
+        idUsuario = scan.nextLine();
+
+        // Comprobamos en el fichero si el idUser existe
+        if (userExists(idUsuario)) {
+
+            System.out.println("El usuario ya existe en el sistema");
+            return false;
+
+        } else {
+            System.out.print("Introduzca su nombre: ");
+            nombreUsuario = scan.nextLine();
+
+            System.out.print("Introduzca su password: ");
+            passwordUsuario = scan.nextLine();
+
+            System.out.print("¿Desea perfil de administrador? (si/no)");
+            isAdminSt = scan.nextLine();
+
+            if (isAdminSt.equalsIgnoreCase("si") || isAdminSt.equalsIgnoreCase("s")) {
+                isAdmin = true;
+            } else if (isAdminSt.equalsIgnoreCase("no") || isAdminSt.equalsIgnoreCase("n")) {
+                isAdmin = false;
+            } else {
+                System.out.println("Comando no identificado");
+            }
+
+            // TODO Comprobar que los datos introducidos son correctos
+
+            // Creamos el usuario
+            User newUser = new User(idUsuario, nombreUsuario, passwordUsuario, isAdmin);
+            // Lo anadimos al ArrayList<User>
+            this.users.add(newUser);
+            // Persistimos los datos en el fichero
+            this.anadirFicheroUsers(newUser);
+
+            return true;
+        }
     }
 
     @Override
@@ -35,14 +79,14 @@ public class ServiceUser implements BasicServiceUser {
         idUsuario = scan.nextLine();
 
         // Comprobamos en el fichero si el idUser existe
-        if(userExists(idUsuario)) {
+        if (userExists(idUsuario)) {
 
             System.out.print("Introduzca su password: ");
             passwordUsuario = scan.nextLine();
 
             if (checkUser(idUsuario, passwordUsuario)) {
 
-                System.out.println("Bienvenid@ "+idUsuario);
+                System.out.println("Bienvenid@ " + idUsuario);
                 return true;
             } else {
                 System.out.println("Credenciales incorrectas");
@@ -59,9 +103,9 @@ public class ServiceUser implements BasicServiceUser {
     public boolean checkUser(String idUser, String password) {
 
         // 1º manera de hacerlo
-        for (int i=0; i<this.users.size(); i++) {
+        for (int i = 0; i < this.users.size(); i++) {
             User usuario = this.users.get(i); // usuario es el elemento de la posicion i de users
-            if(usuario.getId().equalsIgnoreCase(idUser) && usuario.getPass().equals(password)) {
+            if (usuario.getId().equalsIgnoreCase(idUser) && usuario.getPass().equals(password)) {
                 return true;
             }
         }
