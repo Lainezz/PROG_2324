@@ -1,13 +1,12 @@
-package com.es.programacion.tema7.proyectoUser.services.impl;
+package com.es.programacion.tema7.proyectoUserProfe.services.impl;
 
-import com.es.programacion.tema7.proyectoUser.model.User;
-import com.es.programacion.tema7.proyectoUser.services.api.BasicServiceUser;
-
+import com.es.programacion.tema7.proyectoUserProfe.model.User;
+import com.es.programacion.tema7.proyectoUserProfe.services.api.GestionFicheroAPI;
 
 import java.io.*;
 import java.util.ArrayList;
 
-public class GestionFicheroUser {
+public class GestionFicheroUser implements GestionFicheroAPI<User> {
 
     public ArrayList<User> leerFichero(String ruta) {
 

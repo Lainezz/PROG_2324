@@ -1,8 +1,6 @@
 package com.es.programacion.tema7.proyectoUser.services.api;
 
-import com.es.programacion.tema7.proyectoUser.model.User;
-
-public interface BasicLoggerService {
+public interface BasicServiceLogger {
 
     public boolean logAlta(String idUser);
     public boolean logLogin(String idUser);

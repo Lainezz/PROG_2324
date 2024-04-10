@@ -1,8 +1,8 @@
 package com.es.programacion.tema7.proyectoUser.services.impl;
 
-import com.es.programacion.tema7.proyectoUser.services.api.BasicLoggerService;
+import com.es.programacion.tema7.proyectoUser.services.api.BasicServiceLogger;
 
-public class LoggerService implements BasicLoggerService {
+public class LoggerService implements BasicServiceLogger {
 
     private GestionFicheroLogger gestion;
 

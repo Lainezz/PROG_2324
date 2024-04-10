@@ -1,4 +1,4 @@
-package com.es.programacion.tema7.proyectoUser;
+package com.es.programacion.tema7.proyectoUserProfe;
 
 public class Main {
 
