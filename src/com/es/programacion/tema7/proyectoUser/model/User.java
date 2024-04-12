@@ -11,9 +11,10 @@ public class User {
 
 
     public User(String id, String name, String pass, boolean isAdmin){
-
         this.id = id;
-
+        this.name = name;
+        this.pass = pass;
+        this.isAdmin = isAdmin;
     }
 
     public String getId() {

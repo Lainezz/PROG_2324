@@ -2,6 +2,8 @@ package com.es.programacion.tema7.proyectoUser.services.impl;
 
 import com.es.programacion.tema7.proyectoUser.services.api.BasicServiceLogger;
 
+import java.time.LocalDateTime;
+
 public class LoggerService implements BasicServiceLogger {
 
     private GestionFicheroLogger gestion;
@@ -15,19 +17,16 @@ public class LoggerService implements BasicServiceLogger {
     }
 
     @Override
-    public boolean logAlta(String idUser) {
-        return false;
-    }
-
-    @Override
-    public boolean logLogin(String idUser) {
-        return false;
+    public void registrarLog(String infoUser, String accion, String estado) {
+        LocalDateTime time = LocalDateTime.now();
+        String mensaje = "["+accion.toUpperCase()+"] " + time.toString()+" "+infoUser +"-"+ estado;
+        anadirFicheroLogger(mensaje);
     }
 
     @Override
     public void anadirFicheroLogger(String mensaje) {
 
-        this.gestion.anadirFicheroLog(mensaje, "");
+        this.gestion.anadirFicheroLog(mensaje, "src/main/resources/archivosTema7/logs/logs.txt");
 
     }
 }

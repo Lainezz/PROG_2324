@@ -10,12 +10,14 @@ public class ServiceUser implements BasicServiceUser {
 
     // ATRIBUTOS
     ArrayList<User> users; // Contiene todos los registros del fichero users.txt
-    GestionFicheroUser gestion; // gestion es un objeto para poder llamar a los métodos de GestionFicheroUser
+    GestionFicheroUser gestionUser; // gestion es un objeto para poder llamar a los métodos de GestionFicheroUser
+    LoggerService logger;
 
     public ServiceUser() {
         this.users = new ArrayList<>();
-        this.gestion = new GestionFicheroUser();
-        this.users = gestion.leerFichero("main/resources/archivosTema7/users/users.txt");
+        this.gestionUser = new GestionFicheroUser();
+        leerFicheroUsers();
+        this.logger = new LoggerService();
     }
 
     @Override
@@ -35,6 +37,7 @@ public class ServiceUser implements BasicServiceUser {
         if (userExists(idUsuario)) {
 
             System.out.println("El usuario ya existe en el sistema");
+            logger.registrarLog(idUsuario, "alta", "user already registered");
             return false;
 
         } else {
@@ -52,6 +55,7 @@ public class ServiceUser implements BasicServiceUser {
             } else if (isAdminSt.equalsIgnoreCase("no") || isAdminSt.equalsIgnoreCase("n")) {
                 isAdmin = false;
             } else {
+                logger.registrarLog(idUsuario, "alta", "wrong data");
                 System.out.println("Comando no identificado");
             }
 
@@ -63,7 +67,7 @@ public class ServiceUser implements BasicServiceUser {
             this.users.add(newUser);
             // Persistimos los datos en el fichero
             this.anadirFicheroUsers(newUser);
-
+            logger.registrarLog(idUsuario, "alta", "OK");
             return true;
         }
     }
@@ -88,14 +92,18 @@ public class ServiceUser implements BasicServiceUser {
             if (checkUser(idUsuario, passwordUsuario)) {
 
                 System.out.println("Bienvenid@ " + idUsuario);
+
+                logger.registrarLog(idUsuario, "login", "OK");
                 return true;
             } else {
                 System.out.println("Credenciales incorrectas");
+                logger.registrarLog(idUsuario, "login", "incorrect credentials");
                 return false;
             }
 
         } else {
             System.out.println("El usuario no existe en el sistema");
+            logger.registrarLog(idUsuario, "login", "user not exists");
             return false;
         }
     }
@@ -133,21 +141,23 @@ public class ServiceUser implements BasicServiceUser {
 
     @Override
     public boolean userExists(String idUser) {
-        return false;
+
+        return this.users.stream().anyMatch(user -> user.getId().equalsIgnoreCase(idUser));
+
     }
 
     @Override
     public void leerFicheroUsers() {
-        this.users = gestion.leerFichero("main/resources/archivosTema7/users/users.txt");
+        this.users = gestionUser.leerFichero("src/main/resources/archivosTema7/users/users.txt");
     }
 
     @Override
     public void anadirFicheroUsers(User u) {
-        gestion.anadirFichero(u, "main/resources/archivosTema7/users/users.txt");
+        gestionUser.anadirFichero(u, "src/main/resources/archivosTema7/users/users.txt");
     }
 
     @Override
     public void modificarFicheroUsers() {
-        gestion.modificarFichero(this.users, "main/resources/archivosTema7/users/users.txt");
+        gestionUser.modificarFichero(this.users, "src/main/resources/archivosTema7/users/users.txt");
     }
 }

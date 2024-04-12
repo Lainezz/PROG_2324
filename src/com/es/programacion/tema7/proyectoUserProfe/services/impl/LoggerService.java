@@ -1,10 +1,18 @@
 package com.es.programacion.tema7.proyectoUserProfe.services.impl;
 
 import com.es.programacion.tema7.proyectoUserProfe.model.Logger;
+import com.es.programacion.tema7.proyectoUserProfe.services.api.GestionFicheroAPI;
+import com.es.programacion.tema7.proyectoUserProfe.services.api.Service;
 import com.es.programacion.tema7.proyectoUserProfe.services.api.ServiceAPI;
 
-public class LoggerService implements ServiceAPI<Logger> {
+import java.time.LocalDateTime;
 
+public class LoggerService extends Service<Logger> {
+
+
+    public LoggerService(GestionFicheroAPI<Logger> gestionFichero, String ruta) {
+        super(gestionFichero, ruta);
+    }
 
     @Override
     public Logger find(String id) {
@@ -18,6 +26,7 @@ public class LoggerService implements ServiceAPI<Logger> {
 
     @Override
     public boolean alta(Logger newObj) {
-        return false;
+        this.anadirFichero(newObj);
+        return true;
     }
 }
