@@ -30,7 +30,10 @@ public class FramePrincipal extends JFrame {
 
         JButton botonEnviar = new JButton();
         //botonEnviar.setText("Enviar");
-        botonEnviar.setIcon();
+        ImageIcon imageSend = new ImageIcon("src/main/resources/pokemonMedia/images/send.png");
+
+        botonEnviar.setIcon(imageSend);
+        botonEnviar.setPreferredSize(new Dimension(22,22));
         botonEnviar.setBackground(new Color(255, 0, 255));
 
 
