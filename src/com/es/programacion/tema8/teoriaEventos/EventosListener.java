@@ -12,12 +12,16 @@ public class EventosListener extends JFrame {
 
     // Atributos de clase
     JButton botonEnviar;
+    JTextField campoTexto;
 
     // Creamos los eventos
     MouseListener listenerDeBotonEnviar = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
             System.out.println("Boton pulsado");
+            String texto = campoTexto.getText();
+
+            System.out.println(texto);
         }
 
         @Override
@@ -32,13 +36,13 @@ public class EventosListener extends JFrame {
 
         @Override
         public void mouseEntered(MouseEvent e) {
-            System.out.println("Entra el raton");
+            //System.out.println("Entra el raton");
             botonEnviar.setBackground(new Color(252, 143, 136));
         }
 
         @Override
         public void mouseExited(MouseEvent e) {
-            System.out.println("Sale el raton");
+            //System.out.println("Sale el raton");
             botonEnviar.setBackground(new Color(200,200,200));
         }
     };
@@ -62,7 +66,7 @@ public class EventosListener extends JFrame {
 
         JPanel panelCentro = new JPanel();
 
-        JTextField campoTexto = new JTextField();
+        campoTexto = new JTextField();
         campoTexto.setPreferredSize(new Dimension(100, 32));
         campoTexto.setBackground(new Color(0,0,0));
         campoTexto.setForeground(new Color(255,255,255));
