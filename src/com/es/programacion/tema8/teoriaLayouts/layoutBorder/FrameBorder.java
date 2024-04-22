@@ -15,7 +15,47 @@ public class FrameBorder extends JFrame {
 
         // VAMOS A CREAR 4 JPanel y a añadirlos en diferentes posiciones del BorderLayout
         JPanel panelCentro = new JPanel();
-        panelCentro.setBackground(new Color(255, 100, 100));
+        BorderLayout layout = new BorderLayout();
+//        layout.setHgap(5);
+//        layout.setVgap(5);
+        panelCentro.setLayout(layout);
+        panelCentro.setBackground(new Color(0, 0, 0));
+
+        JPanel panelCentroCentro = new JPanel();
+        JPanel panelCentroSur = new JPanel();
+        JPanel panelCentroNorte = new JPanel();
+        JPanel panelCentroEste = new JPanel();
+        JPanel panelCentroOeste = new JPanel();
+
+        panelCentroCentro.setBackground(new Color(255,255, 255));
+        panelCentroSur.   setBackground(new Color(0, 100, 0));
+        panelCentroNorte. setBackground(new Color(100, 100, 0));
+        panelCentroEste.  setBackground(new Color(255, 20, 20));
+        panelCentroOeste. setBackground(new Color(255, 255, 9));
+
+        panelCentroCentro.setPreferredSize(new Dimension(50,50));
+        panelCentroSur.setPreferredSize(new Dimension(50,50));
+        panelCentroNorte.setPreferredSize(new Dimension(50,50));
+        panelCentroEste.setPreferredSize(new Dimension(50,50));
+        panelCentroOeste.setPreferredSize(new Dimension(50,50));
+
+
+        BorderLayout flow = new BorderLayout();
+        JPanel panelPrueba = new JPanel();
+        //panelPrueba.setPreferredSize(new Dimension(100,100));
+        JLabel label1 = new JLabel("Prueba");
+
+        panelPrueba.add(label1);
+        panelCentroCentro.setLayout(flow);
+        panelCentroCentro.add(panelPrueba);
+
+
+        panelCentro.add(panelCentroCentro, BorderLayout.CENTER);
+        panelCentro.add(panelCentroSur, BorderLayout.SOUTH);
+        panelCentro.add(panelCentroNorte, BorderLayout.NORTH);
+        panelCentro.add(panelCentroEste, BorderLayout.EAST);
+        panelCentro.add(panelCentroOeste, BorderLayout.WEST);
+
 
         JPanel panelNorte = new JPanel();
         panelNorte.setBackground(new Color(100, 0, 255));

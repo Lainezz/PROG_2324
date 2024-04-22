@@ -4,8 +4,8 @@ import com.es.programacion.tema7.proyectoUser.model.User;
 
 public interface BasicServiceUser {
 
-    public boolean altaUsuario();
-    public boolean loginUsuario();
+    public String altaUsuario();
+    public String loginUsuario();
     public boolean checkUser(String idUser, String password);
     public boolean userExists(String idUser);
     public void leerFicheroUsers();

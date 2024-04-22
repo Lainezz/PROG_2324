@@ -21,7 +21,7 @@ public class ServiceUser implements BasicServiceUser {
     }
 
     @Override
-    public boolean altaUsuario() {
+    public String altaUsuario() {
 
         Scanner scan = new Scanner(System.in);
         String idUsuario = "";
@@ -38,7 +38,7 @@ public class ServiceUser implements BasicServiceUser {
 
             System.out.println("El usuario ya existe en el sistema");
             logger.registrarLog(idUsuario, "alta", "user already registered");
-            return false;
+            return "";
 
         } else {
             System.out.print("Introduzca su nombre: ");
@@ -68,12 +68,12 @@ public class ServiceUser implements BasicServiceUser {
             // Persistimos los datos en el fichero
             this.anadirFicheroUsers(newUser);
             logger.registrarLog(idUsuario, "alta", "OK");
-            return true;
+            return idUsuario;
         }
     }
 
     @Override
-    public boolean loginUsuario() {
+    public String loginUsuario() {
 
         Scanner scan = new Scanner(System.in);
         String idUsuario = "";
@@ -94,17 +94,17 @@ public class ServiceUser implements BasicServiceUser {
                 System.out.println("Bienvenid@ " + idUsuario);
 
                 logger.registrarLog(idUsuario, "login", "OK");
-                return true;
+                return idUsuario;
             } else {
                 System.out.println("Credenciales incorrectas");
                 logger.registrarLog(idUsuario, "login", "incorrect credentials");
-                return false;
+                return "";
             }
 
         } else {
             System.out.println("El usuario no existe en el sistema");
             logger.registrarLog(idUsuario, "login", "user not exists");
-            return false;
+            return "";
         }
     }
 
