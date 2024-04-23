@@ -72,7 +72,27 @@ public class EventosListener extends JFrame {
         @Override
         public void keyTyped(KeyEvent e) { //
             if(e.getKeyChar() == KeyEvent.VK_ENTER) {
-                System.out.println("Intro pulsado");
+                System.out.println("Boton pulsado");
+                String texto = campoTexto.getText();
+
+                // Debe salir un mensaje de si el numero es par o impar
+                try {
+                    long num = Integer.parseInt(texto);
+                    if (num%2 == 0) {
+                        System.out.println("Es par");
+                        resultado.setText("Es Par");
+                    } else {
+                        System.out.println("Es impar");
+                        resultado.setText("Es Impar");
+                    }
+                    campoTexto.setBackground(new Color(0, 0, 0));
+
+                } catch (NumberFormatException ex) {
+                    campoTexto.setBackground(new Color(255, 0, 0));
+                    resultado.setText("Error!");
+                }
+
+                System.out.println(texto);
             }
 
         }
