@@ -24,6 +24,31 @@ public class PanelCalculadoraI extends JPanel {
         public void mouseClicked(MouseEvent e) {
             JButton b = (JButton) e.getSource();
             System.out.println("Boton "+b.getText()+" clicado");
+
+            if (b.getText().equalsIgnoreCase("+")) {
+                // SE REALIZA LA SUMA
+                // 1º Obtenemos los valores de los TextFields
+                String valorTexto1 = textFieldValor1.getText();
+                String valorTexto2 = textFieldValor2.getText();
+
+                // 2º Para sumar, los valores deben ser enteros (try/catch para evitar errores)
+                try {
+                    int valorEnteroTexto1 = Integer.parseInt(valorTexto1);
+                    int valorEnteroTexto2 = Integer.parseInt(valorTexto2);
+
+                    // 3º Realizamos la suma de los valores
+                    int resultadoSuma = valorEnteroTexto1 + valorEnteroTexto2;
+
+                    // 4º Por último, ponemos ese resultado en el JLabel (labelResultado)
+                    labelResultado.setText(resultadoSuma+"");
+
+                } catch (NumberFormatException ex) {
+                    labelResultado.setText("ERROR");
+                }
+
+            }
+
+
         }
 
         @Override
@@ -63,6 +88,10 @@ public class PanelCalculadoraI extends JPanel {
         botonMultiplicacion.setPreferredSize(new Dimension(150,200));
         botonDivision.setPreferredSize(new Dimension(150,200));
         labelResultado.setPreferredSize(new Dimension(600,200));
+
+        // Otras modificaciones de aspecto
+        labelResultado.setFont(new Font("Consolas", Font.BOLD, 32));
+        labelResultado.setHorizontalAlignment(JLabel.CENTER);
 
         // Anadimos los eventos
         botonSuma.addMouseListener(listenerMouse);
