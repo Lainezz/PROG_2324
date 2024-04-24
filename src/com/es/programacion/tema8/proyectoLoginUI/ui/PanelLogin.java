@@ -1,5 +1,7 @@
 package com.es.programacion.tema8.proyectoLoginUI.ui;
 
+import com.es.programacion.tema8.proyectoLoginUI.services.ServiceUser;
+
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
@@ -15,11 +17,18 @@ public class PanelLogin extends JPanel {
     JTextField pass;
     JButton bEnviar;
 
+    ServiceUser serviceUser = new ServiceUser();
+
     MouseListener listenerMouse = new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
-            System.out.println(user.getText());
-            System.out.println(pass.getText());
+
+
+            if(serviceUser.loginUI(user.getText(), pass.getText())) {
+                System.out.println("Esta registrado");
+            } else {
+                System.out.println("Pa tu casa");
+            }
         }
 
         @Override
