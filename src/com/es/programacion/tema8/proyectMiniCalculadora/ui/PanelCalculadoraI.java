@@ -45,7 +45,77 @@ public class PanelCalculadoraI extends JPanel {
                 } catch (NumberFormatException ex) {
                     labelResultado.setText("ERROR");
                 }
+            }
 
+            if (b.getText().equalsIgnoreCase("-")) {
+                // SE REALIZA LA RESTA
+                // 1º Obtenemos los valores de los TextFields
+                String valorTexto1 = textFieldValor1.getText();
+                String valorTexto2 = textFieldValor2.getText();
+
+                // 2º Para sumar, los valores deben ser enteros (try/catch para evitar errores)
+                try {
+                    int valorEnteroTexto1 = Integer.parseInt(valorTexto1);
+                    int valorEnteroTexto2 = Integer.parseInt(valorTexto2);
+
+                    // 3º Realizamos la suma de los valores
+                    int resultado = valorEnteroTexto1 - valorEnteroTexto2;
+
+                    // 4º Por último, ponemos ese resultado en el JLabel (labelResultado)
+                    labelResultado.setText(resultado+"");
+
+                } catch (NumberFormatException ex) {
+                    labelResultado.setText("ERROR");
+                }
+            }
+
+            if (b.getText().equalsIgnoreCase("x")) {
+                // SE REALIZA LA RESTA
+                // 1º Obtenemos los valores de los TextFields
+                String valorTexto1 = textFieldValor1.getText();
+                String valorTexto2 = textFieldValor2.getText();
+
+                // 2º Para sumar, los valores deben ser enteros (try/catch para evitar errores)
+                try {
+                    int valorEnteroTexto1 = Integer.parseInt(valorTexto1);
+                    int valorEnteroTexto2 = Integer.parseInt(valorTexto2);
+
+                    // 3º Realizamos la suma de los valores
+                    int resultado = valorEnteroTexto1 * valorEnteroTexto2;
+                    System.out.println(resultado);
+
+                    // 4º Por último, ponemos ese resultado en el JLabel (labelResultado)
+                    labelResultado.setText(resultado+"");
+
+                } catch (NumberFormatException ex) {
+                    labelResultado.setText("ERROR");
+                }
+            }
+
+            if (b.getText().equalsIgnoreCase("/")) {
+                // SE REALIZA LA RESTA
+                // 1º Obtenemos los valores de los TextFields
+                String valorTexto1 = textFieldValor1.getText();
+                String valorTexto2 = textFieldValor2.getText();
+
+                // 2º Para sumar, los valores deben ser enteros (try/catch para evitar errores)
+                try {
+                    int valorEnteroTexto1 = Integer.parseInt(valorTexto1);
+                    int valorEnteroTexto2 = Integer.parseInt(valorTexto2);
+
+                    if(valorEnteroTexto2 == 0) {
+                        labelResultado.setText("NO SE PUEDE DIVIDIR POR CERO");
+                    } else {
+                        // 3º Realizamos la suma de los valores
+                        int resultado = valorEnteroTexto1 / valorEnteroTexto2;
+
+                        // 4º Por último, ponemos ese resultado en el JLabel (labelResultado)
+                        labelResultado.setText(resultado+"");
+                    }
+
+                } catch (NumberFormatException ex) {
+                    labelResultado.setText("ERROR");
+                }
             }
 
 
