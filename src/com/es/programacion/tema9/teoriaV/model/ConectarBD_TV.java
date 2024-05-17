@@ -1,6 +1,7 @@
 package com.es.programacion.tema9.teoriaV.model;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConectarBD_TV {
@@ -22,10 +23,33 @@ public class ConectarBD_TV {
     public void realizarConexion() {
 
         try {
+            if(this.connection == null) {
+                this.connection = DriverManager.getConnection(this.url);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void realizarDesconexion() {
+
+        try {
+
+            if(this.connection != null) {
+                connection.close();
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+    }
+
+    /**
+     * Método que devuelve la conexión activa
+     * @return connection (Conexión con la base de datos)
+     */
+    public Connection obtenerConexion(){
+        return this.connection;
     }
 }
