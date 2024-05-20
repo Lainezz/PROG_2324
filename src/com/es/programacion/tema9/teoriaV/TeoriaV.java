@@ -78,6 +78,8 @@ public class TeoriaV {
 
                         PreparedStatement pst5 = conectarBDTv.obtenerConexion().prepareStatement(DBUtils.QUERY_UPDATE_NACCESOS);
 
+                        pst5.setString(1, user);
+
                         int nfilasUpdate = pst5.executeUpdate(); // Devuelve el nº de filas afectadas
 
                         if (nfilasUpdate > 0) {
