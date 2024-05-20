@@ -44,6 +44,57 @@ public class TeoriaV {
             // E) LEER RESULTADOS
             if (rs.next()) {
                 System.out.println("Bienvenid@");
+
+                PreparedStatement pst2 = conectarBDTv.obtenerConexion().prepareStatement(DBUtils.QUERY_CHECK_USER_IN_ACCESOS);
+
+                pst2.setString(1, user);
+
+                ResultSet rs2 = pst2.executeQuery();
+
+                if(rs2.next()) {
+
+                    // Se mete aquí si rs2.next ha sido true -> es decir, que sí existe
+                    PreparedStatement pst3 = conectarBDTv.obtenerConexion().prepareStatement(DBUtils.QUERY_UPDATE_NACCESOS);
+                    pst3.setString(1, user);
+
+                    int nfilas = pst3.executeUpdate(); // Devuelve el nº de filas afectadas
+
+                    if (nfilas > 0) {
+                        System.out.println("Registro actualizado correctamente");
+                    } else {
+                        System.out.println("ID no encontado");
+                    }
+                } else {
+
+                    PreparedStatement pst4 = conectarBDTv.obtenerConexion().prepareStatement(DBUtils.QUERY_INSERT_USER_IN_ACCESOS);
+
+                    pst4.setString(1, user);
+                    pst4.setInt(2,0);
+
+                    int nfilas = pst4.executeUpdate();
+
+                    if (nfilas > 0) {
+                        System.out.println("Registro insertado correctamente");
+
+                        PreparedStatement pst5 = conectarBDTv.obtenerConexion().prepareStatement(DBUtils.QUERY_UPDATE_NACCESOS);
+
+                        int nfilasUpdate = pst5.executeUpdate(); // Devuelve el nº de filas afectadas
+
+                        if (nfilasUpdate > 0) {
+                            System.out.println("Registro actualizado correctamente");
+                        } else {
+                            System.out.println("ID no encontado");
+                        }
+
+
+                    } else {
+                        System.out.println("fallo al insertar");
+                    }
+
+
+                }
+
+
             } else {
                 System.out.println("No estas registrad@");
             }
